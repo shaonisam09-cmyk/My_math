@@ -1,0 +1,52 @@
+# Code and scripts
+*.m
+*.py
+*.pyc
+*.ipynb
+*.sh
+*.ps1
+
+# Data and model artifacts
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.mat
+*.npy
+*.npz
+*.parquet
+*.jsonl
+*.bin
+
+# Archives and temporary downloads
+*.zip
+*.7z
+*.rar
+*.partial
+*.tmp
+*.temp
+*.bak
+*~
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+
+# Caches and local environments
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+node_modules/
+.DS_Store
+Thumbs.db

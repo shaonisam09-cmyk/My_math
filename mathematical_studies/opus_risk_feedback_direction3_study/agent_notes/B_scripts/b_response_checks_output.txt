@@ -1,0 +1,19 @@
+== G: steps to halve |h| after switch to O==1 (Y_t0 = alpha) ==
+       t0  tau_sim  lower(Thm4.2)  upper(Thm4.3)  tau/sqrt(t0)
+      100       44           34.5             57         4.400
+     1000      129          111.3            177         4.079
+    10000      397          354.2            556         3.970
+   100000     1246         1122.2           1756         3.940
+  1000000     3929         3550.8           5551         3.929
+
+== G signal: steps until cumulative Y exceeds alpha+0.05 after switch to O==1 ==
+t0=    100: tau=      6  delta*t0/(p'-alpha-delta)=      5.9
+t0=   1000: tau=     59  delta*t0/(p'-alpha-delta)=     58.8
+t0=  10000: tau=    589  delta*t0/(p'-alpha-delta)=    588.2
+t0= 100000: tau=   5883  delta*t0/(p'-alpha-delta)=   5882.4
+
+== EV: steps to reduce r from r_t0 to r_t0/2 (kappa(1-alpha) per violation) ==
+tau = 12 for every t0 (time invariant)
+
+== W0 exact delay identity (kappa=1) ==
+W0 delay identity exact in 120 cases; equivalent delay = (w-1)/2 + P_t0/(1-alpha)

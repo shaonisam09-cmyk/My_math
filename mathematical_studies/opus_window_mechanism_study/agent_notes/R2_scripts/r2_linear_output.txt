@@ -1,0 +1,49 @@
+=== L1. 仅比例通道：临界 c=1 核验（np.roots） ===
+m=  10  rho(c=0.3,0.9,0.99,1.0,1.01,1.5) = 0.95446408, 0.99829851, 0.99985336, 1.00000000, 1.00178077, 1.09176812
+m=  50  rho(c=0.3,0.9,0.99,1.0,1.01,1.5) = 0.99903246, 0.99998179, 0.99999848, 1.00000000, 1.00039179, 1.02129324
+m= 200  rho(c=0.3,0.9,0.99,1.0,1.01,1.5) = 0.99998180, 0.99999970, 0.99999998, 1.00000000, 1.00009950, 1.00545245
+
+=== L2. 稳定但近乎无阻尼：主导根的每窗口衰减因子 rho^w（c<1） ===
+w=   96 basic c=0.1  |z|max=0.9986598028  (np.roots:0.9986598028)  per-window factor rho^w=0.879198  e-folding windows=7.8
+w=   96 basic c=0.5  |z|max=0.9999582329  (np.roots:0.9999582329)  per-window factor rho^w=0.995998  e-folding windows=249.4
+w=   96 basic c=0.9  |z|max=0.9999973406  (np.roots:0.9999973406)  per-window factor rho^w=0.999745  e-folding windows=3917.0
+w=   96 mid   c=0.1  |z|max=0.9986233367  (np.roots:0.9986233367)  per-window factor rho^w=0.876121  e-folding windows=7.6
+w=   96 mid   c=0.5  |z|max=0.9999569315  (np.roots:0.9999569315)  per-window factor rho^w=0.995874  e-folding windows=241.9
+w=   96 mid   c=0.9  |z|max=0.9999972568  (np.roots:0.9999972568)  per-window factor rho^w=0.999737  e-folding windows=3797.3
+w= 2880 basic c=0.1  |z|max=0.9999999264  (np.roots:nan)  per-window factor rho^w=0.999788  e-folding windows=4718.7
+w= 2880 basic c=0.5  |z|max=0.9999999984  (np.roots:nan)  per-window factor rho^w=0.999995  e-folding windows=210538.7
+w= 2880 basic c=0.9  |z|max=0.9999999999  (np.roots:nan)  per-window factor rho^w=1.000000  e-folding windows=3407552.9
+w= 2880 mid   c=0.1  |z|max=0.9999999263  (np.roots:nan)  per-window factor rho^w=0.999788  e-folding windows=4713.8
+w= 2880 mid   c=0.5  |z|max=0.9999999983  (np.roots:nan)  per-window factor rho^w=0.999995  e-folding windows=210319.6
+w= 2880 mid   c=0.9  |z|max=0.9999999999  (np.roots:nan)  per-window factor rho^w=1.000000  e-folding windows=3404007.3
+
+=== L3. 线性递推时域核验：w=96, 中点版 m=95, c=0.5；零均值随机图样的衰减 ===
+  第  1个窗口 RMS/初始 = 0.5421
+  第  5个窗口 RMS/初始 = 0.2465
+  第 10个窗口 RMS/初始 = 0.1834
+  第 20个窗口 RMS/初始 = 0.1342
+  第 40个窗口 RMS/初始 = 0.1039
+  第 60个窗口 RMS/初始 = 0.0892
+
+=== L4. 核验笔记 (C)：w=96 时加入积分后的临界 G = kappa_I F' w（gP = kappa_P F'） ===
+  gP=  0.0 (c=gP/w=0.000)  G_crit=4.9344
+  gP=  1.0 (c=gP/w=0.010)  G_crit=8.1444
+  gP=  5.0 (c=gP/w=0.052)  G_crit=13.3460
+  gP= 10.0 (c=gP/w=0.104)  G_crit=14.6785
+  gP= 20.0 (c=gP/w=0.208)  G_crit=14.1790
+  gP= 50.0 (c=gP/w=0.521)  G_crit=9.0883
+
+=== L5. 复增益（非对称耦合的特征值）下的稳定域：Re c = a 竖线上的最大 |Im c| ===
+  m=   95  a=0.05: 0.026303  a=0.2: 0.025146  a=0.5: 0.016199  a=0.8: 0.006530   (pi/(2m)=0.016535)
+  m=  383  a=0.05: 0.007408  a=0.2: 0.006478  a=0.5: 0.004080  a=0.8: 0.001635   (pi/(2m)=0.004101)
+  m= 2879  a=0.05: 0.001029  a=0.2: 0.000871  a=0.5: 0.000545  a=0.8: 0.000218   (pi/(2m)=0.000546)
+  np.roots 核验 m=95 a=0.2: beta_max=0.025146, rho(0.98x)=0.999992, rho(1.02x)=1.000008
+  np.roots 核验 m=95 a=0.5: beta_max=0.016199, rho(0.98x)=0.999999, rho(1.02x)=1.000001
+
+=== L6. 两通道耦合反例（线性）：J = F'[[1,-g],[g,1]]，特征值 F'(1 +- i g) ===
+  w=   96 中点版 Delta_P F'=0.2: 单通道稳定；交叉耦合比 g > 0.1257 即失稳
+  w=   96 中点版 Delta_P F'=0.5: 单通道稳定；交叉耦合比 g > 0.0324 即失稳
+  w= 2880 中点版 Delta_P F'=0.2: 单通道稳定；交叉耦合比 g > 0.0044 即失稳
+  w= 2880 中点版 Delta_P F'=0.5: 单通道稳定；交叉耦合比 g > 0.0011 即失稳
+  逐事件对照 kappa F'=0.0174: 稳定 iff g < 10.67
+  逐事件对照 kappa F'=0.1: 稳定 iff g < 4.36

@@ -1,0 +1,72 @@
+=== 1. 纯窗口积分器（beta=0）临界 G = w*kF'：闭式 2w^2 sin^2(pi/2w) 与扫描/特征根核验 ===
+w=    5  closed=4.77458  scan=4.77458  roots=4.77458  theta*w/pi=1.0000
+w=   10  closed=4.89435  scan=4.89435  roots=4.89435  theta*w/pi=1.0000
+w=   50  closed=4.93318  scan=4.93318  roots=4.93318  theta*w/pi=1.0000
+w=  200  closed=4.93470  scan=4.93470  roots=4.93470  theta*w/pi=1.0000
+w= 2880  closed=4.93480  scan=4.93480  roots=nan  theta*w/pi=1.0000
+
+=== 2. 窗口率 PI：临界 G 随 beta = kP/(kI w) 变化（w=2880 扫描；w=100/200 特征根核验） ===
+beta=0.0000  Gcrit(w=2880,scan)=   4.9348  cross theta*w/pi= 1.0000  Gcrit(w=200,roots)=   4.9347  Gcrit(w=100,roots)=   4.9344  ratio_to_pureI= 1.000
+beta=0.1000  Gcrit(w=2880,scan)=   7.5330  cross theta*w/pi= 1.2357  Gcrit(w=200,roots)=   7.4953  Gcrit(w=100,roots)=   7.4545  ratio_to_pureI= 1.527
+beta=0.2500  Gcrit(w=2880,scan)=  12.0716  cross theta*w/pi= 1.5649  Gcrit(w=200,roots)=  11.8224  Gcrit(w=100,roots)=  11.5648  ratio_to_pureI= 2.446
+beta=0.4000  Gcrit(w=2880,scan)=  14.6413  cross theta*w/pi= 1.7242  Gcrit(w=200,roots)=  14.1296  Gcrit(w=100,roots)=  13.6165  ratio_to_pureI= 2.967
+beta=0.5000  Gcrit(w=2880,scan)=  15.6086  cross theta*w/pi= 1.7809  Gcrit(w=200,roots)=  14.9271  Gcrit(w=100,roots)=  14.2562  ratio_to_pureI= 3.163
+beta=0.4998  Gcrit(w=2880,scan)=  15.6073  cross theta*w/pi= 1.7808  Gcrit(w=200,roots)=  14.9260  Gcrit(w=100,roots)=  14.2554  ratio_to_pureI= 3.163
+beta=0.6000  Gcrit(w=2880,scan)=  16.2679  cross theta*w/pi= 1.8187  Gcrit(w=200,roots)=  15.4210  Gcrit(w=100,roots)=  14.6019  ratio_to_pureI= 3.297
+beta=0.7500  Gcrit(w=2880,scan)=  16.9295  cross theta*w/pi= 1.8563  Gcrit(w=200,roots)=  15.8417  Gcrit(w=100,roots)=  14.8163  ratio_to_pureI= 3.431
+beta=1.0000  Gcrit(w=2880,scan)=  17.5816  cross theta*w/pi= 1.8933  Gcrit(w=200,roots)=  16.1092  Gcrit(w=100,roots)=  14.7768  ratio_to_pureI= 3.563
+beta=1.2500  Gcrit(w=2880,scan)=  17.9596  cross theta*w/pi= 1.9152  Gcrit(w=200,roots)=  16.1214  Gcrit(w=100,roots)=  14.5217  ratio_to_pureI= 3.639
+beta=1.5000  Gcrit(w=2880,scan)=  18.2000  cross theta*w/pi= 1.9296  Gcrit(w=200,roots)=  16.0133  Gcrit(w=100,roots)=  14.1801  ratio_to_pureI= 3.688
+beta=2.0000  Gcrit(w=2880,scan)=  18.4748  cross theta*w/pi= 1.9474  Gcrit(w=200,roots)=  15.6382  Gcrit(w=100,roots)=  13.4216  ratio_to_pureI= 3.744
+beta=3.0000  Gcrit(w=2880,scan)=  18.6831  cross theta*w/pi= 1.9650  Gcrit(w=200,roots)=  14.7095  Gcrit(w=100,roots)=  11.9715  ratio_to_pureI= 3.786
+beta=5.0000  Gcrit(w=2880,scan)=  18.6965  cross theta*w/pi= 1.9788  Gcrit(w=200,roots)=  12.9465  Gcrit(w=100,roots)=   9.7296  ratio_to_pureI= 3.789
+
+=== 3. 细扫 beta，求临界 G 的最大值（w=2880） ===
+beta, Gcrit:
+   0.00     4.9348
+   0.60    16.2679
+   1.20    17.8978
+   1.80    18.3877
+   2.40    18.5920
+   3.00    18.6831
+   3.60    18.7181
+   4.20    18.7213
+   4.80    18.7050
+   5.40    18.6759
+   6.00    18.6380
+argmax beta=4.000, Gcrit=18.7229  (grid to 6.0)
+
+=== 4. 时域核验（w=2880，beta=1 与 beta=0.5；G 取临界的 0.97 与 1.03 倍） ===
+beta=0.5  G= 15.1404 (0.97x crit)  amp(last10w)/amp(w10-20) = 7.312e-01
+beta=0.5  G= 16.0769 (1.03x crit)  amp(last10w)/amp(w10-20) = 1.327e+00
+beta=1.0  G= 17.0542 (0.97x crit)  amp(last10w)/amp(w10-20) = 7.913e-01
+beta=1.0  G= 18.1091 (1.03x crit)  amp(last10w)/amp(w10-20) = 9.279e-01
+
+=== 5. 主导根衰减（w=400，每窗口 log|z|*w；越负越快） ===
+beta=0.0: G= 0.5: -0.741  G=   1: -1.256  G=   2: -0.708  G=   3: -0.387  G=   4: -0.162  G=   6:  0.147  G=   8:  0.356  G=  10:  0.508  G=  12:  0.624  G=  15:  0.752
+beta=0.5: G= 0.5: -0.487  G=   1: -0.893  G=   2: -1.339  G=   3: -0.903  G=   4: -0.643  G=   6: -0.350  G=   8: -0.197  G=  10: -0.107  G=  12: -0.052  G=  15: -0.003
+beta=1.0: G= 0.5: -0.378  G=   1: -0.574  G=   2: -0.748  G=   3: -0.515  G=   4: -0.346  G=   6: -0.173  G=   8: -0.093  G=  10: -0.051  G=  12: -0.027  G=  15: -0.007
+beta=2.0: G= 0.5: -0.267  G=   1: -0.353  G=   2: -0.409  G=   3: -0.229  G=   4: -0.140  G=   6: -0.062  G=   8: -0.031  G=  10: -0.016  G=  12: -0.008  G=  15: -0.002
+
+=== 6. 事件-窗口凸组合（无回声）临界 G（w=2880；b 为事件权重） ===
+b=0.00  Gcrit=    4.9348  (= kF' crit 0.00171)
+b=0.05  Gcrit=    5.8356  (= kF' crit 0.00203)
+b=0.10  Gcrit=    7.2819  (= kF' crit 0.00253)
+b=0.20  Gcrit=       inf  (= kF' crit inf)
+b=0.30  Gcrit=       inf  (= kF' crit inf)
+b=0.50  Gcrit=       inf  (= kF' crit inf)
+b=1.00  Gcrit=       inf  (= kF' crit inf)
+
+=== 7. 双时间尺度（泄漏差分快修正）临界 G（w=2880） ===
+beta_f=0.5  tau_f=0.05 w  lam=0.993056  Gcrit=   7.1381
+beta_f=0.5  tau_f=0.1 w  lam=0.996528  Gcrit=5916.0348
+beta_f=0.5  tau_f=0.25 w  lam=0.998611  Gcrit=5795.1009
+beta_f=0.5  tau_f=0.5 w  lam=0.999306  Gcrit= 200.5151
+beta_f=0.5  tau_f=1.0 w  lam=0.999653  Gcrit=  34.0163
+beta_f=0.5  tau_f=1000000000.0 w  lam=1.000000  Gcrit=  15.6086
+beta_f=1.0  tau_f=0.05 w  lam=0.993056  Gcrit=3077.6660
+beta_f=1.0  tau_f=0.1 w  lam=0.996528  Gcrit=2969.3271
+beta_f=1.0  tau_f=0.25 w  lam=0.998611  Gcrit=2908.4019
+beta_f=1.0  tau_f=0.5 w  lam=0.999306  Gcrit=2888.7277
+beta_f=1.0  tau_f=1.0 w  lam=0.999653  Gcrit= 632.3016
+beta_f=1.0  tau_f=1000000000.0 w  lam=1.000000  Gcrit=  17.5816

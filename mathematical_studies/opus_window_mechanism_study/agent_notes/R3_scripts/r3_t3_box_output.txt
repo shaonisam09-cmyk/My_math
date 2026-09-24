@@ -1,0 +1,13 @@
+(a) exact check: max K/((1+1/w)^(w-1) M) over 400 sequences = 0.8888888888888888 (<=1 required)
+(b) greedy path starting from an empty window, keeping S~ <= M
+   w=96 M=5.9: max box count 14  box rate 0.1458   tri-rate bound 2M/(w+1)=0.1206   R3.1 bound 0.1631   Kmax/M=2.3932 (e=2.7183)
+   w=96 M=20.2: max box count 47  box rate 0.4896   tri-rate bound 2M/(w+1)=0.4155   R3.1 bound 0.5618   Kmax/M=2.3325 (e=2.7183)
+   w=96 M=77.2: max box count 96  box rate 1.0000   tri-rate bound 2M/(w+1)=1.5928   R3.1 bound 2.1536   Kmax/M=1.2427 (e=2.7183)
+   w=2880 M=145.1: max box count 383  box rate 0.1330   tri-rate bound 2M/(w+1)=0.1007   R3.1 bound 0.1368   Kmax/M=2.6405 (e=2.7183)
+   w=2880 M=159.4: max box count 420  box rate 0.1458   tri-rate bound 2M/(w+1)=0.1106   R3.1 bound 0.1503   Kmax/M=2.6357 (e=2.7183)
+   w=2880 M=216.5: max box count 565  box rate 0.1962   tri-rate bound 2M/(w+1)=0.1503   R3.1 bound 0.2042   Kmax/M=2.6103 (e=2.7183)
+(c) TB-PI closed loop, threshold plant O=1{r>0} (safe level theta0=0, l=0), quiet 2w then active
+   lb=-1.0 ub=5.0: max tri rate 0.1502 (T3 bound 0.1503, holds=True) | max BOX rate 0.1880 (R3.1 bound 0.2042) | first run 225
+   lb=-1.0 ub=1.0: max tri rate 0.1106 (T3 bound 0.1106, holds=True) | max BOX rate 0.1430 (R3.1 bound 0.1503) | first run 163
+   lb=-1.0 ub=0.0: max tri rate 0.1007 (T3 bound 0.1007, holds=True) | max BOX rate 0.1320 (R3.1 bound 0.1368) | first run 148
+   lb= 0.0 ub=0.0: max tri rate 0.1007 (T3 bound 0.1007, holds=True) | max BOX rate 0.1330 (R3.1 bound 0.1368) | first run 148

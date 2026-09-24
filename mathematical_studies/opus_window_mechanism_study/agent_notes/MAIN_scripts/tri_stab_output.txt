@@ -1,0 +1,14 @@
+w 24 real crit c*: box 1.0  tri 2.0
+   a=Re c 0.05  max coupling g: box 1.61835  tri 7.79025
+   a=Re c 0.2  max coupling g: box 0.4383  tri 3.07069
+   a=Re c 0.5  max coupling g: box 0.12142  tri 1.73205
+w 96 real crit c*: box 1.0  tri 2.0
+   a=Re c 0.05  max coupling g: box 0.52136  tri 6.2244
+   a=Re c 0.2  max coupling g: box 0.12448  tri 2.98283
+   a=Re c 0.5  max coupling g: box 0.03207  tri 1.73205
+w 480 real crit c*: box 1.0  tri 2.0
+   a=Re c 0.05  max coupling g: box 0.1194  tri 6.3257
+   a=Re c 0.2  max coupling g: box 0.02591  tri 3.01684
+   a=Re c 0.5  max coupling g: box 0.00652  tri 1.73205
+
+[exited with code 0]

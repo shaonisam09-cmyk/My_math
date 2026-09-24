@@ -1,0 +1,23 @@
+(a) quiet-length sweep: first run after re-activation [slots] / exceedance of that run / max box rate / max day rate (next w)
+  G=   96 (  1.0 d): TB 11/4/0.103/0.20 | EF 11/4/0.103/0.20 | EVDP 11/4/0.103/0.21 | EVkE 11/1/0.103/0.21 | WB 11/4/0.100/0.20 | W0 51/0/0.112/0.53 | TB ub=0 11/4/0.103/0.20 | TB ub=0,cap=14 11/4/0.103/0.20 | TB2 wP=96,ub=0 5/1/0.104/0.15
+  G=  288 (  3.0 d): TB 31/31/0.110/0.40 | EF 30/28/0.110/0.38 | EVDP 32/33/0.110/0.41 | EVkE 33/8/0.110/0.41 | WB 32/33/0.100/0.40 | W0 140/1/0.133/1.00 | TB ub=0 31/30/0.109/0.39 | TB ub=0,cap=14 31/23/0.109/0.39 | TB2 wP=96,ub=0 5/1/0.109/0.15
+  G=  672 (  7.0 d): TB 68/146/0.121/0.74 | EF 63/126/0.121/0.69 | EVDP 75/178/0.124/0.80 | EVkE 75/44/0.124/0.80 | WB 77/187/0.101/0.82 | W0 318/7/0.176/1.00 | TB ub=0 66/138/0.118/0.72 | TB ub=0,cap=14 66/58/0.118/0.72 | TB2 wP=96,ub=0 5/1/0.109/0.15
+  G= 1344 ( 14.0 d): TB 121/408/0.138/1.00 | EF 108/343/0.139/1.00 | EVDP 80/201/0.125/0.84 | EVkE 150/175/0.147/1.00 | WB 159/596/0.103/1.00 | W0 628/52/0.249/1.00 | TB ub=0 112/364/0.127/1.00 | TB ub=0,cap=14 112/104/0.127/1.00 | TB2 wP=96,ub=0 5/1/0.109/0.15
+  G= 2880 ( 30.0 d): TB 189/756/0.166/1.00 | EF 180/698/0.173/1.00 | EVDP 80/201/0.125/0.84 | EVkE 320/802/0.200/1.00 | WB 327/1458/0.114/1.00 | W0 1248/466/0.433/1.00 | TB ub=0 148/555/0.132/1.00 | TB ub=0,cap=14 148/141/0.132/1.00 | TB2 wP=96,ub=0 5/1/0.109/0.15
+  G= 8640 ( 90.0 d): TB 225/932/0.188/1.00 | EF 194/770/0.175/1.00 | EVDP 80/201/0.125/0.84 | EVkE 320/802/0.200/1.00 | WB 359/1618/0.125/1.00 | W0 2347/3873/0.815/1.00 | TB ub=0 148/555/0.132/1.00 | TB ub=0,cap=14 148/141/0.132/1.00 | TB2 wP=96,ub=0 5/1/0.109/0.15
+(b) weekly on/off adjacency (672 off / 672 on), 40 windows, stats over last 20 windows
+  TB              rate 0.1000 Yw (0.093, 0.123) Yday 0.781 maxrun 72  mag95 4.07  mean mag 1.20  share(r>=4) 0.06  share of violations in runs>=6h 0.54
+  EF              rate 0.1000 Yw (0.093, 0.122) Yday 0.750 maxrun 69  mag95 3.91  mean mag 1.10  share(r>=4) 0.04  share of violations in runs>=6h 0.51
+  EVDP            rate 0.1000 Yw (0.093, 0.124) Yday 0.802 maxrun 75  mag95 4.28  mean mag 1.32  share(r>=4) 0.08  share of violations in runs>=6h 0.56
+  EVkE            rate 0.1000 Yw (0.093, 0.124) Yday 0.802 maxrun 75  mag95 1.06  mean mag 0.33  share(r>=4) 0.00  share of violations in runs>=6h 0.56
+  WB              rate 0.0997 Yw (0.072, 0.106) Yday 1.000 maxrun 98  mag95 4.60  mean mag 0.60  share(r>=4) 0.07  share of violations in runs>=6h 0.60
+  W0              rate 0.1647 Yw (0.033, 0.268) Yday 1.000 maxrun 672  mag95 0.14  mean mag 0.07  share(r>=4) 0.00  share of violations in runs>=6h 1.00
+  TB ub=0         rate 0.0893 Yw (0.083, 0.11) Yday 0.688 maxrun 63  mag95 3.63  mean mag 1.05  share(r>=4) 0.00  share of violations in runs>=6h 0.53
+  TB ub=0,cap=14  rate 0.0893 Yw (0.083, 0.11) Yday 0.688 maxrun 63  mag95 1.00  mean mag 0.46  share(r>=4) 0.00  share of violations in runs>=6h 0.53
+  TB2 wP=96,ub=0  rate 0.0564 Yw (0.053, 0.061) Yday 0.146 maxrun 5  mag95 0.13  mean mag 0.02  share(r>=4) 0.00  share of violations in runs>=6h 0.00
+(c) forced violations for 2w (unreachable), then threshold plant: slots until first violation and rate in next 2w
+  TB    first violation after 2016 slots (21.0 d); rate over next 2w 0.0733
+  EF    first violation after 2716 slots (28.3 d); rate over next 2w 0.0682
+  EVDP  first violation after 143 slots (1.5 d); rate over next 2w 0.0976
+  EVkE  first violation after 10 slots (0.1 d); rate over next 2w 0.0998
+  W0    first violation after 2593 slots (27.0 d); rate over next 2w 0.0997

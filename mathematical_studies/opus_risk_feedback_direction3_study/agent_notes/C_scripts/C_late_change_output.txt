@@ -1,0 +1,93 @@
+-- up_90d_s20: logistic s=20.0; at T0=0.25 y p(r*0) 0.1->0.3; new r*=0.0525  [same_gain]
+   G : Y30 [0.052,0.188] Y7max 0.242 out30 0.76 | r half-way 10.0 d | 1st exit 3.3 d -> return 4.8 d (peak 0.117) | settle30 8.1(4 never) d | excess 171 deficit 140 | run 5.0 | 1s
+   EV: Y30 [0.097,0.105] Y7max 0.118 out30 0.00 | r half-way 1.0 d | 1st exit never d -> return never d (peak nan) | settle30 0.0 d | excess 17 deficit -0 | run 3.8 | 1s
+   W0: Y30 [0.013,0.176] Y7max 0.630 out30 0.90 | r half-way 2.0 d | 1st exit 0.0 d -> return 18.7 d (peak 0.126) | settle30 never d | excess 1215 deficit 142 | run 18.6 | 1s
+-- up_1y_s20: logistic s=20.0; at T0=1.00 y p(r*0) 0.1->0.3; new r*=0.0525  [same_gain]
+   G : Y30 [0.042,0.268] Y7max 0.334 out30 0.88 | r half-way 14.0 d | 1st exit 0.0 d -> return 38.3 d (peak 0.198) | settle30 136.1(4 never) d | excess 302 deficit 349 | run 7.2 | 1s
+   EV: Y30 [0.097,0.105] Y7max 0.118 out30 0.00 | r half-way 1.0 d | 1st exit never d -> return never d (peak nan) | settle30 0.0 d | excess 14 deficit 0 | run 3.8 | 1s
+   W0: Y30 [0.014,0.175] Y7max 0.626 out30 0.90 | r half-way 7.0 d | 1st exit 0.0 d -> return 3.5 d (peak 0.055) | settle30 never d | excess 1410 deficit 23 | run 20.2 | 1s
+-- up_2y_s20: logistic s=20.0; at T0=2.00 y p(r*0) 0.1->0.3; new r*=0.0525  [same_gain]
+   G : Y30 [0.039,0.278] Y7max 0.320 out30 0.87 | r half-way 20.0 d | 1st exit 0.0 d -> return 45.6 d (peak 0.193) | settle30 never d | excess 419 deficit 421 | run 6.4 | 2s
+   EV: Y30 [0.097,0.105] Y7max 0.119 out30 0.00 | r half-way 2.0 d | 1st exit never d -> return never d (peak nan) | settle30 0.0 d | excess 16 deficit 0 | run 4.0 | 2s
+   W0: Y30 [0.013,0.175] Y7max 0.626 out30 0.91 | r half-way 2.0 d | 1st exit 0.0 d -> return 5.8 d (peak 0.056) | settle30 never d | excess 1437 deficit 19 | run 18.4 | 2s
+-- up_5y_s20: logistic s=20.0; at T0=5.00 y p(r*0) 0.1->0.3; new r*=0.0525  [same_gain]
+   G : Y30 [0.042,0.261] Y7max 0.310 out30 0.87 | r half-way 35.0 d | 1st exit 0.8 d -> return 61.6 d (peak 0.209) | settle30 65.0(4 never) d | excess 586 deficit 565 | run 5.4 | 4s
+   EV: Y30 [0.097,0.105] Y7max 0.118 out30 0.00 | r half-way 1.0 d | 1st exit never d -> return never d (peak nan) | settle30 0.0 d | excess 16 deficit -0 | run 4.0 | 3s
+   W0: Y30 [0.013,0.174] Y7max 0.628 out30 0.90 | r half-way 12.0 d | 1st exit 0.0 d -> return 5.2 d (peak 0.120) | settle30 never d | excess 1270 deficit 117 | run 19.2 | 4s
+-- down_90d_s20: logistic s=20.0; at T0=0.25 y p(r*0) 0.1->0.03; new r*=0.1839  [same_gain]
+   G : Y30 [0.054,0.136] Y7max 0.164 out30 0.27 | r half-way 10.0 d | 1st exit 0.1 d -> return 23.2 d (peak 0.072) | settle30 74.5 d | excess 58 deficit 88 | run 3.8 | 1s
+   EV: Y30 [0.089,0.101] Y7max 0.109 out30 0.00 | r half-way 2.0 d | 1st exit never d -> return never d (peak nan) | settle30 0.0 d | excess 1 deficit 168 | run 3.6 | 1s
+   W0: Y30 [0.028,0.128] Y7max 0.240 out30 0.40 | r half-way 24.0 d | 1st exit 0.0 d -> return 16.0 d (peak 0.102) | settle30 124.8(2 never) d | excess 10 deficit 514 | run 4.4 | 1s
+-- down_1y_s20: logistic s=20.0; at T0=1.00 y p(r*0) 0.1->0.03; new r*=0.1839  [same_gain]
+   G : Y30 [0.038,0.144] Y7max 0.168 out30 0.51 | r half-way 28.0 d | 1st exit 0.0 d -> return 8.1 d (peak 0.114) | settle30 189.7(1 never) d | excess 44 deficit 179 | run 5.0 | 1s
+   EV: Y30 [0.090,0.101] Y7max 0.110 out30 0.00 | r half-way 2.0 d | 1st exit never d -> return never d (peak nan) | settle30 0.0 d | excess 0 deficit 168 | run 3.8 | 1s
+   W0: Y30 [0.024,0.122] Y7max 0.207 out30 0.41 | r half-way 8.0 d | 1st exit 0.0 d -> return 16.7 d (peak 0.042) | settle30 never d | excess 43 deficit 375 | run 4.4 | 2s
+-- down_2y_s20: logistic s=20.0; at T0=2.00 y p(r*0) 0.1->0.03; new r*=0.1839  [same_gain]
+   G : Y30 [0.040,0.144] Y7max 0.169 out30 0.56 | r half-way 32.0 d | 1st exit 0.0 d -> return 36.4 d (peak 0.077) | settle30 155.5 d | excess 73 deficit 226 | run 4.6 | 2s
+   EV: Y30 [0.090,0.101] Y7max 0.110 out30 0.00 | r half-way 2.0 d | 1st exit never d -> return never d (peak nan) | settle30 0.0 d | excess -0 deficit 158 | run 4.0 | 2s
+   W0: Y30 [0.019,0.127] Y7max 0.185 out30 0.44 | r half-way 3.0 d | 1st exit 0.0 d -> return 18.5 d (peak 0.046) | settle30 210.7(2 never) d | excess 45 deficit 397 | run 4.2 | 2s
+-- down_5y_s20: logistic s=20.0; at T0=5.00 y p(r*0) 0.1->0.03; new r*=0.1839  [same_gain]
+   G : Y30 [0.033,0.146] Y7max 0.165 out30 0.63 | r half-way 41.0 d | 1st exit 4.5 d -> return 65.3 d (peak 0.060) | settle30 203.4 d | excess 111 deficit 323 | run 4.6 | 4s
+   EV: Y30 [0.088,0.101] Y7max 0.109 out30 0.00 | r half-way 2.0 d | 1st exit never d -> return never d (peak nan) | settle30 0.0 d | excess 0 deficit 177 | run 3.6 | 3s
+   W0: Y30 [0.012,0.139] Y7max 0.168 out30 0.41 | r half-way 13.0 d | 1st exit 0.0 d -> return 5.2 d (peak 0.116) | settle30 174.0(2 never) d | excess 0 deficit 466 | run 4.6 | 4s
+theory up T0=90 d: sqrt(2*15*c*T0/dp) = 10.8 d
+theory up T0=365 d: sqrt(2*15*c*T0/dp) = 21.7 d
+theory up T0=730 d: sqrt(2*15*c*T0/dp) = 30.7 d
+theory up T0=1825 d: sqrt(2*15*c*T0/dp) = 48.5 d
+theory down T0=90 d: sqrt(2*15*c*T0/dp) = 13.1 d
+theory down T0=365 d: sqrt(2*15*c*T0/dp) = 26.4 d
+theory down T0=730 d: sqrt(2*15*c*T0/dp) = 37.3 d
+theory down T0=1825 d: sqrt(2*15*c*T0/dp) = 59.0 d
+== paired change/no-change (common random numbers), s=20, same gain ==
+  up   G  T0=    90 d: change-attributable excess Dmax= 196.8 (seeds [247, 136, 204, 203, 194]), t90=243.2 d | no-change control: out30=0.52, excess=105, deficit=75
+  up   G  T0=   365 d: change-attributable excess Dmax= 309.6 (seeds [241, 261, 311, 462, 273]), t90= 22.4 d | no-change control: out30=0.55, excess=70, deficit=124
+  up   G  T0=   730 d: change-attributable excess Dmax= 414.8 (seeds [368, 361, 461, 516, 368]), t90= 31.9 d | no-change control: out30=0.46, excess=117, deficit=119
+  up   G  T0=  1825 d: change-attributable excess Dmax= 564.6 (seeds [565, 572, 565, 502, 619]), t90= 34.4 d | no-change control: out30=0.37, excess=146, deficit=131
+  up   EV T0=    90 d: change-attributable excess Dmax=   9.0 (seeds [9, 9, 9, 9, 9]), t90=  2.2 d | no-change control: out30=0.00, excess=8, deficit=5
+  up   EV T0=   365 d: change-attributable excess Dmax=   9.0 (seeds [9, 9, 9, 9, 9]), t90=  2.0 d | no-change control: out30=0.00, excess=5, deficit=8
+  up   EV T0=   730 d: change-attributable excess Dmax=   9.0 (seeds [9, 9, 9, 9, 9]), t90=  3.4 d | no-change control: out30=0.00, excess=7, deficit=7
+  up   EV T0=  1825 d: change-attributable excess Dmax=   9.0 (seeds [9, 9, 9, 9, 9]), t90=  2.8 d | no-change control: out30=0.00, excess=8, deficit=5
+  down G  T0=    90 d: change-attributable excess Dmax= 104.0 (seeds [83, 71, 105, 137, 124]), t90= 21.4 d | no-change control: out30=0.52, excess=105, deficit=75
+  down G  T0=   365 d: change-attributable excess Dmax= 146.2 (seeds [138, 134, 145, 189, 125]), t90= 25.0 d | no-change control: out30=0.55, excess=70, deficit=124
+  down G  T0=   730 d: change-attributable excess Dmax= 231.4 (seeds [191, 218, 221, 341, 186]), t90= 35.2 d | no-change control: out30=0.46, excess=117, deficit=119
+  down G  T0=  1825 d: change-attributable excess Dmax= 362.8 (seeds [309, 326, 356, 465, 358]), t90= 44.7 d | no-change control: out30=0.37, excess=146, deficit=131
+  down EV T0=    90 d: change-attributable excess Dmax= 167.0 (seeds [186, 172, 163, 158, 156]), t90=320.0 d | no-change control: out30=0.00, excess=8, deficit=5
+  down EV T0=   365 d: change-attributable excess Dmax= 163.6 (seeds [171, 160, 173, 141, 173]), t90=329.8 d | no-change control: out30=0.00, excess=5, deficit=8
+  down EV T0=   730 d: change-attributable excess Dmax= 154.2 (seeds [149, 156, 145, 179, 142]), t90=332.8 d | no-change control: out30=0.00, excess=7, deficit=7
+  down EV T0=  1825 d: change-attributable excess Dmax= 176.6 (seeds [212, 155, 188, 173, 155]), t90=325.9 d | no-change control: out30=0.00, excess=8, deficit=5
+== mean-field G (O=p, no sampling noise), gamma=15 ==
+  up   T0=    90 d: r(T0)=0.1225 (new r*=0.0525), pre-change max|Y30-a|=0.0047; r half-way 7.8 d; Y30 first excursion returns after 31.302083333333332 d (peak 0.147); sign changes of daily p-a at days [13, 85, 125, 219, 274]; last day outside band 365; |p-a| max over last 60 d 0.0468
+  up   T0=   365 d: r(T0)=0.1164 (new r*=0.0525), pre-change max|Y30-a|=0.0064; r half-way 15.0 d; Y30 first excursion returns after 40.15625 d (peak 0.182); sign changes of daily p-a at days [26, 156, 223]; last day outside band 365; |p-a| max over last 60 d 0.0498
+  up   T0=   730 d: r(T0)=0.1174 (new r*=0.0525), pre-change max|Y30-a|=0.0052; r half-way 20.9 d; Y30 first excursion returns after 48.510416666666664 d (peak 0.214); sign changes of daily p-a at days [37, 217, 306]; last day outside band 365; |p-a| max over last 60 d 0.0478
+  up   T0=  1825 d: r(T0)=0.1197 (new r*=0.0525), pre-change max|Y30-a|=0.0043; r half-way 32.3 d; Y30 first excursion returns after 65.46875 d (peak 0.255); sign changes of daily p-a at days [57, 340]; last day outside band 365; |p-a| max over last 60 d 0.0598
+  down T0=    90 d: r(T0)=0.1225 (new r*=0.1839), pre-change max|Y30-a|=0.0047; r half-way 9.1 d; Y30 first excursion returns after 17.145833333333332 d (peak 0.076); sign changes of daily p-a at days [12, 47, 76, 103, 136, 168]; last day outside band 54; |p-a| max over last 60 d 0.0240
+  down T0=   365 d: r(T0)=0.1164 (new r*=0.1839), pre-change max|Y30-a|=0.0064; r half-way 21.7 d; Y30 first excursion returns after 40.427083333333336 d (peak 0.046); sign changes of daily p-a at days [29, 100, 152, 199, 255, 306]; last day outside band 361; |p-a| max over last 60 d 0.0235
+  down T0=   730 d: r(T0)=0.1174 (new r*=0.1839), pre-change max|Y30-a|=0.0052; r half-way 30.5 d; Y30 first excursion returns after 51.15625 d (peak 0.035); sign changes of daily p-a at days [41, 140, 210, 272, 347]; last day outside band 339; |p-a| max over last 60 d 0.0248
+  down T0=  1825 d: r(T0)=0.1197 (new r*=0.1839), pre-change max|Y30-a|=0.0043; r half-way 48.0 d; Y30 first excursion returns after 72.91666666666667 d (peak 0.032); sign changes of daily p-a at days [65, 215, 322]; last day outside band 365; |p-a| max over last 60 d 0.0315
+== (a) mean-field G, settle time of 30-day mean after change, horizon 6 y ==
+  G up   T0=   90 d: last day with |Y30-a|>0.02 after change =    2190 d (= 24.33 x T0); yearly max|p-a| after change: [0.211, 0.114, 0.092, 0.085, 0.079, 0.073]
+  G up   T0=  365 d: last day with |Y30-a|>0.02 after change =    2190 d (= 6.00 x T0); yearly max|p-a| after change: [0.185, 0.141, 0.117, 0.109, 0.102, 0.096]
+  G up   T0=  730 d: last day with |Y30-a|>0.02 after change =    2188 d (= 3.00 x T0); yearly max|p-a| after change: [0.189, 0.154, 0.142, 0.133, 0.124, 0.117]
+  G up   T0= 1825 d: last day with |Y30-a|>0.02 after change =    2190 d (= 1.20 x T0); yearly max|p-a| after change: [0.199, 0.185, 0.173, 0.164, 0.138, 0.155]
+  EV up   T0=  365 d: last day with |Y30-a|>0.02 = 0.0 d
+  EV up   T0= 1825 d: last day with |Y30-a|>0.02 = 0.0 d
+  G down T0=   90 d: last day with |Y30-a|>0.02 after change =      54 d (= 0.60 x T0); yearly max|p-a| after change: [0.068, 0.023, 0.019, 0.018, 0.017, 0.015]
+  G down T0=  365 d: last day with |Y30-a|>0.02 after change =    1870 d (= 5.12 x T0); yearly max|p-a| after change: [0.072, 0.028, 0.025, 0.024, 0.022, 0.021]
+  G down T0=  730 d: last day with |Y30-a|>0.02 after change =    2092 d (= 2.87 x T0); yearly max|p-a| after change: [0.072, 0.03, 0.028, 0.026, 0.025, 0.024]
+  G down T0= 1825 d: last day with |Y30-a|>0.02 after change =    2190 d (= 1.20 x T0); yearly max|p-a| after change: [0.07, 0.032, 0.03, 0.029, 0.029, 0.027]
+  EV down T0=  365 d: last day with |Y30-a|>0.02 = 0.0 d
+  EV down T0= 1825 d: last day with |Y30-a|>0.02 = 0.0 d
+== (b) stochastic stationary runs (no change), s=20, same gain, 5 seeds, 6 y ==
+  G  year 1-2: rms(p-a)=0.0327, sd(Y30)=0.0277, frac |Y30-a|>0.02 = 0.55, dominant period of p ~ 122 d
+  G  year 2-3: rms(p-a)=0.0325, sd(Y30)=0.0269, frac |Y30-a|>0.02 = 0.46, dominant period of p ~ 182 d
+  G  year 5-6: rms(p-a)=0.0279, sd(Y30)=0.0228, frac |Y30-a|>0.02 = 0.37, dominant period of p ~ 365 d
+  EV year 1-2: rms(p-a)=0.0252, sd(Y30)=0.0009, frac |Y30-a|>0.02 = 0.00, dominant period of p ~ 33 d
+  EV year 2-3: rms(p-a)=0.0256, sd(Y30)=0.0009, frac |Y30-a|>0.02 = 0.00, dominant period of p ~ 33 d
+  EV year 5-6: rms(p-a)=0.0261, sd(Y30)=0.0009, frac |Y30-a|>0.02 = 0.00, dominant period of p ~ 61 d
+  W0 year 1-2: rms(p-a)=0.1451, sd(Y30)=0.0425, frac |Y30-a|>0.02 = 0.83, dominant period of p ~ 41 d
+  W0 year 2-3: rms(p-a)=0.1455, sd(Y30)=0.0429, frac |Y30-a|>0.02 = 0.83, dominant period of p ~ 41 d
+  W0 year 5-6: rms(p-a)=0.1459, sd(Y30)=0.0431, frac |Y30-a|>0.02 = 0.83, dominant period of p ~ 41 d
+  prediction G year 1-2: rms(p-a) ~ sqrt(F' c a(1-a)) = 0.0360, period 2 pi sqrt(t/(F' c)) = 125 d
+  prediction G year 2-3: rms(p-a) ~ sqrt(F' c a(1-a)) = 0.0360, period 2 pi sqrt(t/(F' c)) = 161 d
+  prediction G year 5-6: rms(p-a) ~ sqrt(F' c a(1-a)) = 0.0360, period 2 pi sqrt(t/(F' c)) = 239 d
+  prediction EV: rms(p-a) ~ sqrt(F' kappa a(1-a)/2) = 0.0255, correlation time 1/(F' kappa) = 69 steps

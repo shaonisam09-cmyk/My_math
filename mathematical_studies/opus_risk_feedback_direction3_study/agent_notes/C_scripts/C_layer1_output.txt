@@ -1,0 +1,127 @@
+-- stat_s20: logistic s=20.0, r*=0.12, stationary  (seeds [11, 12, 13, 14, 15])
+   G  whole: Y30 max 0.159 p95 0.145 min 0.052 >a+.02 0.227 | Y7 max 0.204 >a+.02 0.255 | Y30<a-.02 0.250 | exc30 169 | run max 6.000 p95 2.000 n>=24 0.000 | r sd 0.018 dr 0.001 | cum-a 0.000
+      start60d: Y30 max 0.129 Y7 max 0.169 run 3.800 exc30 32
+   EV whole: Y30 max 0.109 p95 0.101 min 0.072 >a+.02 0.000 | Y7 max 0.114 >a+.02 0.000 | Y30<a-.02 0.001 | exc30 9.600 | run max 4.000 p95 2.000 n>=24 0.000 | r sd 0.014 dr 0.007 | cum-a -0.000
+      start60d: Y30 max 0.108 Y7 max 0.113 run 3.000 exc30 6.000
+   W0 whole: Y30 max 0.147 p95 0.145 min 0.017 >a+.02 0.470 | Y7 max 0.400 >a+.02 0.339 | Y30<a-.02 0.271 | exc30 136 | run max 9.400 p95 3.000 n>=24 0.000 | r sd 0.121 dr 0.001 | cum-a 0.003
+      start60d: Y30 max 0.115 Y7 max 0.195 run 3.800 exc30 42
+-- stat_s100: logistic s=100.0, r*=0.12, stationary  (seeds [11, 12, 13, 14, 15])
+   G  whole: Y30 max 0.170 p95 0.144 min 0.043 >a+.02 0.188 | Y7 max 0.263 >a+.02 0.318 | Y30<a-.02 0.175 | exc30 179 | run max 6.200 p95 2.000 n>=24 0.000 | r sd 0.007 dr 0.001 | cum-a -0.000
+      start60d: Y30 max 0.151 Y7 max 0.169 run 4.400 exc30 30
+   EV whole: Y30 max 0.102 p95 0.101 min 0.070 >a+.02 0.000 | Y7 max 0.107 >a+.02 0.000 | Y30<a-.02 0.000 | exc30 4.800 | run max 3.400 p95 2.000 n>=24 0.000 | r sd 0.007 dr 0.007 | cum-a -0.000
+      start60d: Y30 max 0.101 Y7 max 0.106 run 3.000 exc30 3.200
+   W0 whole: Y30 max 0.173 p95 0.173 min 0.000 >a+.02 0.688 | Y7 max 0.743 >a+.02 0.290 | Y30<a-.02 0.177 | exc30 212 | run max 396 p95 19 n>=24 47 | r sd 0.108 dr 0.001 | cum-a 0.033
+      start60d: Y30 max 0.136 Y7 max 0.289 run 9.000 exc30 74
+-- up_1y_s100: logistic s=100.0; at T0=1.00 y p(r*0) 0.1->0.3; new r*=0.1065  (seeds [11, 12, 13, 14, 15])
+   G  whole: Y30 max 0.178 p95 0.160 min 0.029 >a+.02 0.223 | Y7 max 0.310 >a+.02 0.324 | Y30<a-.02 0.222 | exc30 224 | run max 7.600 p95 2.000 n>=24 0.000 | r sd 0.011 dr 0.001 | cum-a 0.000
+      start60d: Y30 max 0.151 Y7 max 0.169 run 4.400 exc30 30
+      change30d: Y30 max 0.150 min 0.065 Y7 max 0.178 run 3.800 exc30 144 | recovery: Y30 [0.030,0.178] run 7.200 | settle30   -   d settle7 2/5 none d | excess 77 deficit 168
+   EV whole: Y30 max 0.102 p95 0.101 min 0.070 >a+.02 0.000 | Y7 max 0.107 >a+.02 0.000 | Y30<a-.02 0.000 | exc30 5.200 | run max 3.400 p95 2.000 n>=24 0.000 | r sd 0.009 dr 0.007 | cum-a -0.000
+      start60d: Y30 max 0.101 Y7 max 0.106 run 3.000 exc30 3.200
+      change30d: Y30 max 0.102 min 0.099 Y7 max 0.106 run 2.600 exc30 5.200 | recovery: Y30 [0.099,0.102] run 3.400 | settle30 0.000 d settle7 0.000 d | excess 4.380 deficit 2.140
+   W0 whole: Y30 max 0.180 p95 0.180 min 0.000 >a+.02 0.691 | Y7 max 0.773 >a+.02 0.293 | Y30<a-.02 0.174 | exc30 231 | run max 440 p95 17 n>=24 42 | r sd 0.107 dr 0.001 | cum-a 0.036
+      start60d: Y30 max 0.136 Y7 max 0.289 run 9.000 exc30 74
+      change30d: Y30 max 0.178 min 0.055 Y7 max 0.763 run 162 exc30 225 | recovery: Y30 [0.000,0.180] run 440 | settle30   -   d settle7   -   d | excess 1649 deficit 100
+-- ramp_s20: logistic s=20.0; r* 0.12->0.06 over 180 d from 1 y  (seeds [11, 12, 13, 14, 15])
+   G  whole: Y30 max 0.157 p95 0.142 min 0.052 >a+.02 0.167 | Y7 max 0.202 >a+.02 0.220 | Y30<a-.02 0.164 | exc30 165 | run max 6.000 p95 2.000 n>=24 0.000 | r sd 0.031 dr 0.001 | cum-a 0.000
+      start60d: Y30 max 0.129 Y7 max 0.169 run 3.800 exc30 32
+      change30d: Y30 max 0.140 min 0.085 Y7 max 0.151 run 3.800 exc30 122 | recovery: Y30 [0.067,0.142] run 4.400 | settle30 83 d settle7 23 d | excess 80 deficit 102
+      after T1: settle30 0.000 d, longest no-violation stretch 0.919 d, Y30 [0.076,0.128], frac Y30<a-.02 0.113 frac Y30>a+.02 0.039
+   EV whole: Y30 max 0.108 p95 0.102 min 0.072 >a+.02 0.000 | Y7 max 0.115 >a+.02 0.000 | Y30<a-.02 0.001 | exc30 9.800 | run max 4.000 p95 2.000 n>=24 0.000 | r sd 0.030 dr 0.007 | cum-a 0.000
+      start60d: Y30 max 0.108 Y7 max 0.113 run 3.000 exc30 6.000
+      change30d: Y30 max 0.102 min 0.098 Y7 max 0.110 run 3.000 exc30 6.600 | recovery: Y30 [0.097,0.103] run 3.800 | settle30 0.000 d settle7 0.000 d | excess 12 deficit 6.240
+      after T1: settle30 0.000 d, longest no-violation stretch 0.694 d, Y30 [0.097,0.103], frac Y30<a-.02 0.000 frac Y30>a+.02 0.000
+   W0 whole: Y30 max 0.169 p95 0.167 min 0.014 >a+.02 0.527 | Y7 max 0.603 >a+.02 0.331 | Y30<a-.02 0.241 | exc30 200 | run max 15 p95 4.000 n>=24 0.000 | r sd 0.120 dr 0.001 | cum-a 0.015
+      start60d: Y30 max 0.115 Y7 max 0.195 run 3.800 exc30 42
+      change30d: Y30 max 0.143 min 0.032 Y7 max 0.366 run 7.000 exc30 123 | recovery: Y30 [0.014,0.169] run 15 | settle30   -   d settle7   -   d | excess 1053 deficit 44
+      after T1: settle30   -   d, longest no-violation stretch 12 d, Y30 [0.014,0.169], frac Y30<a-.02 0.220 frac Y30>a+.02 0.679
+-- unreach_s20: logistic s=20.0; 60 d unreachable (p(-0.1)=0.5, p(0)=0.88)  (seeds [11, 12, 13, 14, 15])
+   G  whole: Y30 max 0.926 p95 0.818 min 0.006 >a+.02 0.218 | Y7 max 0.981 >a+.02 0.225 | Y30<a-.02 0.479 | exc30 2378 | run max 160 p95 8.800 n>=24 44 | r sd 0.060 dr 0.001 | cum-a 0.029
+      start60d: Y30 max 0.129 Y7 max 0.169 run 3.800 exc30 32
+      change30d: Y30 max 0.926 min 0.120 Y7 max 0.981 run 160 exc30 2378 | recovery: Y30 [0.006,0.926] run 58 | settle30   -   d settle7   -   d | excess 4622 deficit -0.900
+      after T1: settle30   -   d, longest no-violation stretch 6.977 d, Y30 [0.006,0.879], frac Y30<a-.02 0.910 frac Y30>a+.02 0.086
+   EV whole: Y30 max 0.513 p95 0.457 min 0.072 >a+.02 0.119 | Y7 max 0.541 >a+.02 0.090 | Y30<a-.02 0.001 | exc30 1190 | run max 15 p95 3.000 n>=24 0.000 | r sd 0.062 dr 0.007 | cum-a 0.033
+      start60d: Y30 max 0.108 Y7 max 0.113 run 3.000 exc30 6.000
+      change30d: Y30 max 0.505 min 0.101 Y7 max 0.533 run 15 exc30 1166 | recovery: Y30 [0.091,0.513] run 13 | settle30 88 d settle7 69 d | excess 2329 deficit -0.900
+      after T1: settle30 28 d, longest no-violation stretch 1.746 d, Y30 [0.091,0.504], frac Y30<a-.02 0.000 frac Y30>a+.02 0.091
+   W0 whole: Y30 max 0.588 p95 0.486 min 0.005 >a+.02 0.517 | Y7 max 0.861 >a+.02 0.388 | Y30<a-.02 0.242 | exc30 1404 | run max 266 p95 3.800 n>=24 4.000 | r sd 0.121 dr 0.001 | cum-a 0.037
+      start60d: Y30 max 0.115 Y7 max 0.195 run 3.800 exc30 42
+      change30d: Y30 max 0.583 min 0.054 Y7 max 0.855 run 266 exc30 1391 | recovery: Y30 [0.005,0.587] run 13 | settle30   -   d settle7   -   d | excess 2652 deficit -0.900
+      after T1: settle30   -   d, longest no-violation stretch 21 d, Y30 [0.005,0.500], frac Y30<a-.02 0.279 frac Y30>a+.02 0.566
+-- quiet1: threshold theta=0.05; silent 1 x 30 d from day 180, then edge-riding  (seeds [0])
+   G  whole: Y30 max 0.477 p95 0.414 min 0.000 >a+.02 0.208 | Y7 max 1.000 >a+.02 0.219 | Y30<a-.02 0.544 | exc30 1086 | run max 1374 p95 816 n>=24 10 | r sd 0.041 dr 0.005 | cum-a -0.019 | mag max 0.150 int 145
+      start60d: Y30 max 0.166 Y7 max 0.256 run 172 exc30 66
+      change30d: Y30 max 0.477 min 0.000 Y7 max 1.000 run 1374 exc30 1086 mag int 143 | recovery: Y30 [0.000,0.477] run 0.000 | settle30   -   d settle7   -   d | excess 1237 deficit 354 first run after re-exposure 1374
+   EV whole: Y30 max 0.172 p95 0.104 min 0.000 >a+.02 0.006 | Y7 max 0.172 >a+.02 0.008 | Y30<a-.02 0.118 | exc30 19 | run max 21 p95 1.000 n>=24 0.000 | r sd 0.040 dr 0.007 | cum-a -0.007 | mag max 0.150 int 3.218
+      start60d: Y30 max 0.172 Y7 max 0.172 run 7.000 exc30 7.100
+      change30d: Y30 max 0.107 min 0.000 Y7 max 0.128 run 21 exc30 19 mag int 1.752 | recovery: Y30 [0.100,0.106] run 1.000 | settle30 22 d settle7 7.062 d | excess 20 deficit -0.900 first run after re-exposure 21
+   W0 whole: Y30 max 1.000 p95 0.214 min 0.000 >a+.02 0.709 | Y7 max 1.000 >a+.02 0.303 | Y30<a-.02 0.140 | exc30 329 | run max 617 p95 596 n>=24 11 | r sd 0.091 dr 0.001 | cum-a 0.053 | mag max 0.150 int 448
+      start60d: Y30 max 1.000 Y7 max 1.000 run 561 exc30 273
+      change30d: Y30 max 0.214 min 0.000 Y7 max 0.918 run 617 exc30 329 mag int 71 | recovery: Y30 [0.000,0.214] run 576 | settle30   -   d settle7   -   d | excess 1460 deficit -0.900 first run after re-exposure 617
+-- quiet2: threshold theta=0.05; silent 2 x 30 d from day 180, then edge-riding  (seeds [0])
+   G  whole: Y30 max 0.614 p95 0.458 min 0.000 >a+.02 0.203 | Y7 max 1.000 >a+.02 0.213 | Y30<a-.02 0.566 | exc30 1480 | run max 1768 p95 1013 n>=24 10 | r sd 0.060 dr 0.005 | cum-a -0.015 | mag max 0.150 int 200
+      start60d: Y30 max 0.166 Y7 max 0.256 run 172 exc30 66
+      change30d: Y30 max 0.614 min 0.000 Y7 max 1.000 run 1768 exc30 1480 mag int 197 | recovery: Y30 [0.000,0.614] run 0.000 | settle30   -   d settle7   -   d | excess 1591 deficit -0.900 first run after re-exposure 1768
+   EV whole: Y30 max 0.172 p95 0.103 min 0.000 >a+.02 0.006 | Y7 max 0.172 >a+.02 0.007 | Y30<a-.02 0.181 | exc30 19 | run max 21 p95 1.000 n>=24 0.000 | r sd 0.053 dr 0.007 | cum-a -0.014 | mag max 0.150 int 3.218
+      start60d: Y30 max 0.172 Y7 max 0.172 run 7.000 exc30 7.100
+      change30d: Y30 max 0.107 min 0.000 Y7 max 0.128 run 21 exc30 19 mag int 1.752 | recovery: Y30 [0.100,0.106] run 1.000 | settle30 22 d settle7 7.062 d | excess 20 deficit -0.900 first run after re-exposure 21
+   W0 whole: Y30 max 1.000 p95 0.214 min 0.000 >a+.02 0.658 | Y7 max 1.000 >a+.02 0.282 | Y30<a-.02 0.202 | exc30 329 | run max 617 p95 596 n>=24 11 | r sd 0.108 dr 0.001 | cum-a 0.042 | mag max 0.150 int 453
+      start60d: Y30 max 1.000 Y7 max 1.000 run 561 exc30 273
+      change30d: Y30 max 0.214 min 0.000 Y7 max 0.918 run 617 exc30 329 mag int 76 | recovery: Y30 [0.000,0.214] run 576 | settle30   -   d settle7   -   d | excess 1460 deficit -0.900 first run after re-exposure 617
+-- quiet3: threshold theta=0.05; silent 3 x 30 d from day 180, then edge-riding  (seeds [0])
+   G  whole: Y30 max 0.749 p95 0.500 min 0.000 >a+.02 0.199 | Y7 max 1.000 >a+.02 0.208 | Y30<a-.02 0.586 | exc30 1868 | run max 2156 p95 1207 n>=24 10 | r sd 0.071 dr 0.005 | cum-a -0.011 | mag max 0.150 int 254
+      start60d: Y30 max 0.166 Y7 max 0.256 run 172 exc30 66
+      change30d: Y30 max 0.749 min 0.000 Y7 max 1.000 run 2156 exc30 1868 mag int 251 | recovery: Y30 [0.000,0.748] run 0.000 | settle30   -   d settle7   -   d | excess 1940 deficit -0.900 first run after re-exposure 2156
+   EV whole: Y30 max 0.172 p95 0.103 min 0.000 >a+.02 0.005 | Y7 max 0.172 >a+.02 0.007 | Y30<a-.02 0.236 | exc30 19 | run max 21 p95 1.000 n>=24 0.000 | r sd 0.061 dr 0.007 | cum-a -0.019 | mag max 0.150 int 3.218
+      start60d: Y30 max 0.172 Y7 max 0.172 run 7.000 exc30 7.100
+      change30d: Y30 max 0.107 min 0.000 Y7 max 0.128 run 21 exc30 19 mag int 1.752 | recovery: Y30 [0.100,0.106] run 1.000 | settle30 22 d settle7 7.062 d | excess 20 deficit -0.900 first run after re-exposure 21
+   W0 whole: Y30 max 1.000 p95 0.214 min 0.000 >a+.02 0.614 | Y7 max 1.000 >a+.02 0.263 | Y30<a-.02 0.255 | exc30 329 | run max 617 p95 596 n>=24 11 | r sd 0.118 dr 0.001 | cum-a 0.032 | mag max 0.150 int 453
+      start60d: Y30 max 1.000 Y7 max 1.000 run 561 exc30 273
+      change30d: Y30 max 0.214 min 0.000 Y7 max 0.918 run 617 exc30 329 mag int 76 | recovery: Y30 [0.000,0.214] run 576 | settle30   -   d settle7   -   d | excess 1460 deficit -0.900 first run after re-exposure 617
+-- thr_d0: threshold theta=0.05, extra delay d=0  (seeds [0])
+   G  whole: Y30 max 0.174 p95 0.140 min 0.000 >a+.02 0.137 | Y7 max 0.500 >a+.02 0.320 | Y30<a-.02 0.177 | exc30 213 | run max 336 p95 328 n>=24 15 | r sd 0.006 dr 0.005 | cum-a -0.000 | mag max 0.050 int 4.597
+      start60d: Y30 max 0.166 Y7 max 0.256 run 172 exc30 66
+   EV whole: Y30 max 0.172 p95 0.104 min 0.100 >a+.02 0.007 | Y7 max 0.172 >a+.02 0.007 | Y30<a-.02 0.000 | exc30 7.100 | run max 7.000 p95 1.000 n>=24 0.000 | r sd 0.002 dr 0.007 | cum-a 0.000 | mag max 0.050 int 1.600
+      start60d: Y30 max 0.172 Y7 max 0.172 run 7.000 exc30 7.100
+   W0 whole: Y30 max 1.000 p95 0.200 min 0.000 >a+.02 0.763 | Y7 max 1.000 >a+.02 0.314 | Y30<a-.02 0.150 | exc30 288 | run max 576 p95 576 n>=24 11 | r sd 0.086 dr 0.001 | cum-a 0.070 | mag max 0.115 int 441
+      start60d: Y30 max 1.000 Y7 max 1.000 run 561 exc30 273
+-- thr_d1: threshold theta=0.05, extra delay d=1  (seeds [0])
+   G  whole: Y30 max 0.171 p95 0.154 min 0.000 >a+.02 0.365 | Y7 max 0.659 >a+.02 0.275 | Y30<a-.02 0.225 | exc30 205 | run max 443 p95 429 n>=24 12 | r sd 0.008 dr 0.005 | cum-a -0.002 | mag max 0.050 int 6.949
+      start60d: Y30 max 0.168 Y7 max 0.321 run 216 exc30 108
+   EV whole: Y30 max 0.178 p95 0.104 min 0.100 >a+.02 0.007 | Y7 max 0.178 >a+.02 0.007 | Y30<a-.02 0.000 | exc30 7.900 | run max 8.000 p95 2.000 n>=24 0.000 | r sd 0.004 dr 0.007 | cum-a 0.000 | mag max 0.050 int 3.051
+      start60d: Y30 max 0.178 Y7 max 0.178 run 8.000 exc30 7.900
+   W0 whole: Y30 max 1.000 p95 0.201 min 0.000 >a+.02 0.763 | Y7 max 1.000 >a+.02 0.313 | Y30<a-.02 0.150 | exc30 290 | run max 578 p95 578 n>=24 11 | r sd 0.086 dr 0.001 | cum-a 0.069 | mag max 0.116 int 445
+      start60d: Y30 max 1.000 Y7 max 1.000 run 564 exc30 276
+-- thr_d4: threshold theta=0.05, extra delay d=4  (seeds [0])
+   G  whole: Y30 max 0.220 p95 0.220 min 0.000 >a+.02 0.426 | Y7 max 0.942 >a+.02 0.220 | Y30<a-.02 0.420 | exc30 345 | run max 633 p95 603 n>=24 9.000 | r sd 0.012 dr 0.005 | cum-a 0.004 | mag max 0.050 int 15
+      start60d: Y30 max 0.177 Y7 max 0.430 run 289 exc30 214
+   EV whole: Y30 max 0.196 p95 0.104 min 0.099 >a+.02 0.009 | Y7 max 0.196 >a+.02 0.009 | Y30<a-.02 0.000 | exc30 10 | run max 11 p95 5.000 n>=24 0.000 | r sd 0.010 dr 0.007 | cum-a 0.000 | mag max 0.050 int 7.399
+      start60d: Y30 max 0.196 Y7 max 0.196 run 11 exc30 10
+   W0 whole: Y30 max 1.000 p95 0.202 min 0.000 >a+.02 0.763 | Y7 max 1.000 >a+.02 0.312 | Y30<a-.02 0.151 | exc30 295 | run max 583 p95 583 n>=24 11 | r sd 0.087 dr 0.001 | cum-a 0.068 | mag max 0.118 int 455
+      start60d: Y30 max 1.000 Y7 max 1.000 run 574 exc30 286
+-- thr_tol0: threshold theta=0 with solver overshoot 1e-9  (seeds [0])
+   G  whole: Y30 max 1.000 p95 1.000 min 1.000 >a+.02 1.000 | Y7 max 1.000 >a+.02 1.000 | Y30<a-.02 0.000 | exc30 2592 | run max 35040 p95 35040 n>=24 1.000 | r sd 0.002 dr 0.005 | cum-a 0.900 | mag max 0.100 int 1.789
+      start60d: Y30 max 1.000 Y7 max 1.000 run 5760 exc30 2592
+   EV whole: Y30 max 0.240 p95 0.107 min 0.100 >a+.02 0.016 | Y7 max 0.240 >a+.02 0.016 | Y30<a-.02 0.000 | exc30 13 | run max 14 p95 1.000 n>=24 0.000 | r sd 0.003 dr 0.007 | cum-a 0.000 | mag max 0.100 int 0.745
+      start60d: Y30 max 0.240 Y7 max 0.240 run 14 exc30 13
+   W0 whole: Y30 max 1.000 p95 0.200 min 0.007 >a+.02 0.795 | Y7 max 1.000 >a+.02 0.328 | Y30<a-.02 0.126 | exc30 287 | run max 575 p95 575 n>=24 11 | r sd 0.068 dr 0.001 | cum-a 0.072 | mag max 0.115 int 457
+      start60d: Y30 max 1.000 Y7 max 1.000 run 575 exc30 287
+== EV lower margin l = theta - m k(1-alpha) (theta=0.05, k=0.008, r0=0.1, u=0.2), 1 year from t=1 ==
+  thr_d0 m=0: rate 0.5001, Y30 max(after day 30) see raw, frac30>a+.02 1.000, Y7 max 0.536, run max 7, n_run>=24 0, mag int 14.21
+  thr_d0 m=0.5: rate 0.1668, Y30 max(after day 30) see raw, frac30>a+.02 1.000, Y7 max 0.232, run max 7, n_run>=24 0, mag int 2.53
+  thr_d0 m=1: rate 0.1002, Y30 max(after day 30) see raw, frac30>a+.02 0.007, Y7 max 0.172, run max 7, n_run>=24 0, mag int 1.60
+  thr_d1 m=0.5: rate 0.2502, Y30 max(after day 30) see raw, frac30>a+.02 1.000, Y7 max 0.312, run max 8, n_run>=24 0, mag int 7.26
+  thr_d1 m=1: rate 0.1668, Y30 max(after day 30) see raw, frac30>a+.02 1.000, Y7 max 0.231, run max 8, n_run>=24 0, mag int 2.58
+  thr_d1 m=1.5: rate 0.1178, Y30 max(after day 30) see raw, frac30>a+.02 0.076, Y7 max 0.189, run max 8, n_run>=24 0, mag int 3.55
+  thr_d1 m=2: rate 0.1002, Y30 max(after day 30) see raw, frac30>a+.02 0.007, Y7 max 0.178, run max 8, n_run>=24 0, mag int 3.05
+  thr_d4 m=1: rate 0.2780, Y30 max(after day 30) see raw, frac30>a+.02 1.000, Y7 max 0.356, run max 11, n_run>=24 0, mag int 15.97
+  thr_d4 m=4: rate 0.1113, Y30 max(after day 30) see raw, frac30>a+.02 0.022, Y7 max 0.208, run max 11, n_run>=24 0, mag int 6.62
+  thr_d4 m=4.5: rate 0.1002, Y30 max(after day 30) see raw, frac30>a+.02 0.009, Y7 max 0.196, run max 11, n_run>=24 0, mag int 7.40
+  thr_d4 m=5: rate 0.1002, Y30 max(after day 30) see raw, frac30>a+.02 0.009, Y7 max 0.196, run max 11, n_run>=24 0, mag int 7.40
+== solver overshoot 1e-9 at theta=0: EV with l in {0, -1e-9, -k(1-a)}; W0 same; G cannot tighten ==
+  EV {'kappa': 0.008, 'l': 0.0, 'u': 0.2}: rate 1.0000, run max 35040, frac30>a+.02 1.000
+  EV {'kappa': 0.008, 'l': -1e-09, 'u': 0.2}: rate 0.5002, run max 14, frac30>a+.02 1.000
+  EV {'kappa': 0.008, 'l': -0.007200000000000001, 'u': 0.2}: rate 0.1004, run max 14, frac30>a+.02 0.016
+  W0 {'kappa': 0.0005, 'l': 0.0, 'u': 0.2}: rate 1.0000, run max 35040, frac30>a+.02 1.000
+  W0 {'kappa': 0.0005, 'l': -0.007200000000000001, 'u': 0.2}: rate 0.1802, run max 1131, frac30>a+.02 0.814
+  G {'gamma': 15.0, 'u': 0.2}: rate 1.0000, run max 35040, frac30>a+.02 1.000

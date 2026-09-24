@@ -1,0 +1,21 @@
+merged Thm4 (d=0) intervals checked: 549000
+delay invariance/run/count intervals checked: 777600
+exact margin scan (d, alpha, sup(theta-min r), pred, sup<pred):
+    (0, '1/10', 0.8995024875621891, 0.9, True)
+    (0, '1/20', 0.9497512437810945, 0.95, True)
+    (0, '1/7', 0.8564321250888415, 0.8571428571428571, True)
+    (1, '1/10', 1.6995024875621891, 1.7, True)
+    (1, '1/20', 1.8497512437810946, 1.85, True)
+    (1, '1/7', 1.5707178393745558, 1.5714285714285714, True)
+    (2, '1/10', 2.499502487562189, 2.5, True)
+    (2, '1/20', 2.7497512437810947, 2.75, True)
+    (2, '1/7', 2.28500355366027, 2.2857142857142856, True)
+    (4, '1/10', 4.099502487562189, 4.1, True)
+    (4, '1/20', 4.5497512437810945, 4.55, True)
+    (4, '1/7', 3.7135749822316986, 3.7142857142857144, True)
+clipping with the no-delay margin lo = theta - k(1-a), alpha=0.1, kappa=1/20:
+    d=1: lo=-k(1-a): rate=0.1539, max run=2 | lo=-(d+1)k(1-a): rate=0.1000, max run=2
+    d=4: lo=-k(1-a): rate=0.2633, max run=5 | lo=-(d+1)k(1-a): rate=0.1000, max run=5
+    d=8: lo=-k(1-a): rate=0.3336, max run=9 | lo=-(d+1)k(1-a): rate=0.1002, max run=9
+tolerance cases (rate, max run): {'theta=-1e-9, lo=0': (1.0, 3000), 'theta=-1e-9, lo=-k(1-a)-1e-9': (0.1, 1), 'eps=eta: theta=0, lo=-k(1-a)': (0.1, 1)}
+recovery burst with delay: exact equality ceil(X)+d in 200 cases

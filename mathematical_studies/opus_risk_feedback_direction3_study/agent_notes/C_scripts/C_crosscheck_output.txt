@@ -1,0 +1,7 @@
+EV vs R3.EB max |dr| = 0.000e+00
+W0 (w=7) vs R3.W0 max |dr| = 0.000e+00
+W0 (w=96) vs R3.W0 max |dr| = 0.000e+00
+W0 (w=2880) vs R3.W0 max |dr| = 0.000e+00
+G vs exact eq.(18) (h<0, r=-h) max relative |dr| over 400 steps = 1.784e-15
+b_t = alpha - (S_t + 1/2)/(t+1) identity (exact, t<60): True
+EV closed-loop identity (20000 steps, float): lhs=-2.000000 rhs=-2.000000

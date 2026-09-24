@@ -1,0 +1,5 @@
+TOY MODEL ONLY -- TB runs done 28
+
+real	0m53.314s
+user	0m0.015s
+sys	0m0.016s

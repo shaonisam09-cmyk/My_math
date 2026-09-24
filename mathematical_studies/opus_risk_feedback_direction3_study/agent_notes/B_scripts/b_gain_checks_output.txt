@@ -1,0 +1,5 @@
+Abel identity and bound checked on 109301 intervals
+switch at t=    100: violations to undo relaxation =    12   D/(kappa_ts(1-alpha)) =     11.1
+switch at t=   1000: violations to undo relaxation =    36   D/(kappa_ts(1-alpha)) =     35.1
+switch at t=  10000: violations to undo relaxation =   112   D/(kappa_ts(1-alpha)) =    111.1
+switch at t= 100000: violations to undo relaxation =   352   D/(kappa_ts(1-alpha)) =    351.4

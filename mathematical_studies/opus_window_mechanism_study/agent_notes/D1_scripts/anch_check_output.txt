@@ -1,0 +1,6 @@
+THR0 EVT(消融) mean|dr|=0.0017 phase-mean std=0.0009 max|dr|=0.002
+THR0 ANCH mean|dr|=0.0003 phase-mean std=0.0005 max|dr|=0.002
+UNRH EVT(消融) mean|dr|=0.0020 phase-mean std=0.0549 max|dr|=0.016
+UNRH ANCH mean|dr|=0.0016 phase-mean std=0.3816 max|dr|=0.017
+INT0 EVT(消融) mean|dr|=0.0028 phase-mean std=0.0678 max|dr|=0.016
+INT0 ANCH mean|dr|=0.0026 phase-mean std=0.0681 max|dr|=0.017

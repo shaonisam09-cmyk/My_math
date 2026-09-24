@@ -1,0 +1,25 @@
+== L1 scalar delay condition: critical c for z^{d+1}-z^d+c ==
+  d= 0: numeric c*=2.000000  formula=2.000000  grid mismatches=0
+  d= 1: numeric c*=1.000000  formula=1.000000  grid mismatches=0
+  d= 2: numeric c*=0.618034  formula=0.618034  grid mismatches=0
+  d= 3: numeric c*=0.445042  formula=0.445042  grid mismatches=0
+  d= 4: numeric c*=0.347296  formula=0.347296  grid mismatches=0
+  d= 5: numeric c*=0.284630  formula=0.284630  grid mismatches=0
+  d= 6: numeric c*=0.241073  formula=0.241073  grid mismatches=0
+  d= 7: numeric c*=0.209057  formula=0.209057  grid mismatches=0
+  d= 8: numeric c*=0.184537  formula=0.184537  grid mismatches=0
+  d= 9: numeric c*=0.165159  formula=0.165159  grid mismatches=0
+  d=10: numeric c*=0.149460  formula=0.149460  grid mismatches=0
+  max |numeric - formula| = 2.16e-15  -> PASS
+== L2 coupled disk condition |1-lambda(KJ)|<1 (d=0) ==
+  random 2-4 channel K J: 20000/20000 agree (identity: eig(I-KJ) = 1 - eig(KJ))
+  J=[[1.0, 0.9], [-0.9, 0.2]], K=[0.5, 0.5]: eig(KJ)=[(0.3+0.4031j), (0.3-0.4031j)], disk=True
+  J=[[1.0, 0.9], [-0.9, 0.2]], K=[0.5, 4.0]: eig(KJ)=[(0.65+1.2639j), (0.65-1.2639j)], disk=False
+  (unequal per-channel gains move the eigenvalues; the disk must be checked on K J)
+== L3 asymmetric coupling J = p(1-p)[[s,g],[-g,s]], equal gains: disk vs delay ==
+  kappa=0.002: a=0.0036, disk g_max=471.0; d=0: 471.0; d=1: 271.5; d=4: 156.1
+  kappa=0.008: a=0.0144, disk g_max=234.9; d=0: 234.9; d=1: 134.8; d=4: 76.4
+  kappa=0.032: a=0.0576, disk g_max=116.1; d=0: 116.1; d=1: 65.5; d=4: 34.8
+  d=0 bisection equals the disk value; with delay the admissible g shrinks (region is not the disk)
+  d=1: numeric 134.8 vs approx s/sqrt((d+1/2)a)=136.1
+  d=4: numeric 76.4 vs approx s/sqrt((d+1/2)a)=78.6

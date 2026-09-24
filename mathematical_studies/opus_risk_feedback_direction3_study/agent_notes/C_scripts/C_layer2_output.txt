@@ -1,0 +1,93 @@
+W0 reference gain = 0.000476
+== TUNING (seeds 1,2) ==
+  done stat_s20
+  done up_1y_s20
+  done quiet2
+  done unreach_s20
+  G  cand 0 {'gamma': 240.0, 'u': 0.2}: J=0.5852 mean Y30max=0.604
+  G  cand 1 {'gamma': 60.0, 'u': 0.2}: J=0.7053 mean Y30max=0.501
+  G  cand 2 {'gamma': 15.0, 'u': 0.2}: J=0.5920 mean Y30max=0.485
+  G  cand 3 {'gamma': 3.75, 'u': 0.2}: J=0.4688 mean Y30max=0.413
+  G  cand 4 {'gamma': 240.0, 'u': 0.15}: J=0.5852 mean Y30max=0.604
+  G  cand 5 {'gamma': 60.0, 'u': 0.15}: J=0.7031 mean Y30max=0.499
+  G  cand 6 {'gamma': 15.0, 'u': 0.15}: J=0.5398 mean Y30max=0.471
+  G  cand 7 {'gamma': 3.75, 'u': 0.15}: J=0.4607 mean Y30max=0.399   <== selected
+  EV cand 0 {'kappa': 0.0005, 'l': -0.1, 'u': 0.2}: J=0.1394 mean Y30max=0.455
+  EV cand 1 {'kappa': 0.002, 'l': -0.1, 'u': 0.2}: J=0.0839 mean Y30max=0.275
+  EV cand 2 {'kappa': 0.008, 'l': -0.1, 'u': 0.2}: J=0.0770 mean Y30max=0.227
+  EV cand 3 {'kappa': 0.032, 'l': -0.1, 'u': 0.2}: J=0.0761 mean Y30max=0.216   <== selected
+  EV cand 4 {'kappa': 0.0005, 'l': 0.0, 'u': 0.15}: J=0.1256 mean Y30max=0.536
+  EV cand 5 {'kappa': 0.002, 'l': 0.0, 'u': 0.15}: J=0.0829 mean Y30max=0.368
+  EV cand 6 {'kappa': 0.008, 'l': 0.0, 'u': 0.15}: J=0.0781 mean Y30max=0.320
+  EV cand 7 {'kappa': 0.032, 'l': 0.0, 'u': 0.15}: J=0.0768 mean Y30max=0.305
+  W0 cand 0 {'kappa': 2.9747791951274875e-05, 'l': -0.1, 'u': 0.2}: J=0.5888 mean Y30max=0.592
+  W0 cand 1 {'kappa': 0.0001189911678050995, 'l': -0.1, 'u': 0.2}: J=0.4292 mean Y30max=0.581
+  W0 cand 2 {'kappa': 0.000475964671220398, 'l': -0.1, 'u': 0.2}: J=0.3619 mean Y30max=0.515
+  W0 cand 3 {'kappa': 0.001903858684881592, 'l': -0.1, 'u': 0.2}: J=0.8676 mean Y30max=0.494
+  W0 cand 4 {'kappa': 2.9747791951274875e-05, 'l': 0.0, 'u': 0.15}: J=0.5888 mean Y30max=0.592
+  W0 cand 5 {'kappa': 0.0001189911678050995, 'l': 0.0, 'u': 0.15}: J=0.3986 mean Y30max=0.582
+  W0 cand 6 {'kappa': 0.000475964671220398, 'l': 0.0, 'u': 0.15}: J=0.3508 mean Y30max=0.558   <== selected
+  W0 cand 7 {'kappa': 0.001903858684881592, 'l': 0.0, 'u': 0.15}: J=0.7481 mean Y30max=0.550
+== TEST (seeds 21..25; threshold scenarios deterministic) ==
+-- stat_s20: logistic s=20.0, r*=0.12, stationary
+   G [7] out-band 0.117+0.132 | Y30 max 0.141 p95 0.129 | Y7 max 0.190 >a+.02 0.270 | exc30 111.6 | run max 4.6 n>=24 0.0 | r sd 0.019 dr 0.0052 | cum-a 0.0001 | start60d Y30max 0.125 run 4
+   EV[3] out-band 0.000+0.000 | Y30 max 0.109 p95 0.101 | Y7 max 0.110 >a+.02 0.000 | exc30 4.8 | run max 3.8 n>=24 0.0 | r sd 0.029 dr 0.0288 | cum-a -0.0000 | start60d Y30max 0.109 run 3
+   W0[6] out-band 0.004+0.038 | Y30 max 0.120 p95 0.111 | Y7 max 0.142 >a+.02 0.071 | exc30 57.2 | run max 4.6 n>=24 0.0 | r sd 0.005 dr 0.0000 | cum-a -0.0007 | start60d Y30max 0.114 run 4
+-- stat_s100: logistic s=100.0, r*=0.12, stationary
+   G [7] out-band 0.127+0.100 | Y30 max 0.145 p95 0.128 | Y7 max 0.401 >a+.02 0.339 | exc30 113.8 | run max 10.2 n>=24 0.0 | r sd 0.016 dr 0.0052 | cum-a 0.0003 | start60d Y30max 0.136 run 8
+   EV[3] out-band 0.000+0.000 | Y30 max 0.104 p95 0.100 | Y7 max 0.105 >a+.02 0.000 | exc30 2.6 | run max 2.6 n>=24 0.0 | r sd 0.015 dr 0.0288 | cum-a -0.0000 | start60d Y30max 0.104 run 2
+   W0[6] out-band 0.447+0.466 | Y30 max 0.208 p95 0.201 | Y7 max 0.509 >a+.02 0.281 | exc30 311.8 | run max 12.2 n>=24 0.0 | r sd 0.034 dr 0.0001 | cum-a -0.0020 | start60d Y30max 0.160 run 5
+-- up_1y_s100: logistic s=100.0; at T0=1.00 y p(r*0) 0.1->0.3; new r*=0.1065
+   G [7] out-band 0.126+0.125 | Y30 max 0.149 p95 0.135 | Y7 max 0.407 >a+.02 0.335 | exc30 138.4 | run max 11.4 n>=24 0.0 | r sd 0.019 dr 0.0052 | cum-a -0.0004 | settle30 2/5 none d | excess 104 deficit 135 | start60d Y30max 0.136 run 8
+   EV[3] out-band 0.000+0.000 | Y30 max 0.104 p95 0.100 | Y7 max 0.105 >a+.02 0.000 | exc30 2.2 | run max 2.4 n>=24 0.0 | r sd 0.016 dr 0.0288 | cum-a 0.0000 | settle30 0.0 d | excess 2 deficit 1 | start60d Y30max 0.104 run 2
+   W0[6] out-band 0.447+0.465 | Y30 max 0.207 p95 0.202 | Y7 max 0.507 >a+.02 0.281 | exc30 309.6 | run max 12.0 n>=24 0.0 | r sd 0.035 dr 0.0001 | cum-a -0.0018 | settle30   -   d | excess 368 deficit 34 | start60d Y30max 0.160 run 5
+-- up_5y_s20: logistic s=20.0; at T0=5.00 y p(r*0) 0.1->0.3; new r*=0.0525
+   G [7] out-band 0.216+0.286 | Y30 max 0.262 p95 0.145 | Y7 max 0.315 >a+.02 0.274 | exc30 467.6 | run max 6.0 n>=24 0.0 | r sd 0.036 dr 0.0052 | cum-a -0.0010 | settle30   -   d | excess 269 deficit 328 | start60d Y30max 0.125 run 4
+   EV[3] out-band 0.000+0.000 | Y30 max 0.109 p95 0.101 | Y7 max 0.110 >a+.02 0.000 | exc30 6.6 | run max 4.0 n>=24 0.0 | r sd 0.038 dr 0.0288 | cum-a -0.0000 | settle30 0.0 d | excess 6 deficit 1 | start60d Y30max 0.109 run 3
+   W0[6] out-band 0.027+0.034 | Y30 max 0.197 p95 0.115 | Y7 max 0.293 >a+.02 0.098 | exc30 279.8 | run max 5.4 n>=24 0.0 | r sd 0.027 dr 0.0000 | cum-a 0.0005 | settle30 141.0 d | excess 266 deficit -0 | start60d Y30max 0.114 run 4
+-- down_1y_s20: logistic s=20.0; at T0=1.00 y p(r*0) 0.1->0.03; new r*=0.1839
+   G [7] out-band 0.015+0.508 | Y30 max 0.130 p95 0.112 | Y7 max 0.182 >a+.02 0.131 | exc30 72.6 | run max 4.4 n>=24 0.0 | r sd 0.021 dr 0.0052 | cum-a -0.0238 | settle30   -   d | excess -0 deficit 1671 | start60d Y30max 0.125 run 4
+   EV[3] out-band 0.000+0.030 | Y30 max 0.109 p95 0.101 | Y7 max 0.110 >a+.02 0.000 | exc30 4.4 | run max 3.6 n>=24 0.0 | r sd 0.039 dr 0.0288 | cum-a -0.0078 | settle30 0.0 d | excess 0 deficit 544 | start60d Y30max 0.109 run 3
+   W0[6] out-band 0.000+0.525 | Y30 max 0.116 p95 0.109 | Y7 max 0.140 >a+.02 0.032 | exc30 45.0 | run max 4.6 n>=24 0.0 | r sd 0.016 dr 0.0000 | cum-a -0.0246 | settle30   -   d | excess 0 deficit 1677 | start60d Y30max 0.114 run 4
+-- ramp_s20: logistic s=20.0; r* 0.12->0.06 over 180 d from 1 y
+   G [7] out-band 0.120+0.139 | Y30 max 0.150 p95 0.133 | Y7 max 0.205 >a+.02 0.256 | exc30 136.6 | run max 5.2 n>=24 0.0 | r sd 0.032 dr 0.0052 | cum-a 0.0006 | settle30 2/5 none d | excess 75 deficit 72 | after T1: settle 3/5 none d, low 0.283 high 0.206 | start60d Y30max 0.125 run 4
+   EV[3] out-band 0.000+0.000 | Y30 max 0.109 p95 0.101 | Y7 max 0.110 >a+.02 0.000 | exc30 5.0 | run max 3.8 n>=24 0.0 | r sd 0.039 dr 0.0288 | cum-a -0.0000 | settle30 0.0 d | excess 5 deficit 3 | after T1: settle 0.0 d, low 0.000 high 0.000 | start60d Y30max 0.109 run 3
+   W0[6] out-band 0.025+0.036 | Y30 max 0.126 p95 0.117 | Y7 max 0.152 >a+.02 0.099 | exc30 75.8 | run max 4.6 n>=24 0.0 | r sd 0.027 dr 0.0000 | cum-a 0.0011 | settle30 0.0 d | excess 158 deficit 9 | after T1: settle 0.0 d, low 0.000 high 0.002 | start60d Y30max 0.114 run 4
+-- unreach_s20: logistic s=20.0; 60 d unreachable (p(-0.1)=0.5, p(0)=0.88)
+   G [7] out-band 0.132+0.398 | Y30 max 0.907 p95 0.804 | Y7 max 0.963 >a+.02 0.221 | exc30 2324.6 | run max 156.8 n>=24 39.2 | r sd 0.060 dr 0.0052 | cum-a 0.0276 | settle30   -   d | excess 4573 deficit -1 | after T1: settle   -   d, low 0.910 high 0.086 | start60d Y30max 0.125 run 4
+   EV[3] out-band 0.119+0.000 | Y30 max 0.530 p95 0.474 | Y7 max 0.557 >a+.02 0.091 | exc30 1239.2 | run max 11.8 n>=24 0.0 | r sd 0.064 dr 0.0288 | cum-a 0.0344 | settle30 88.5 d | excess 2420 deficit -1 | after T1: settle 28.5 d, low 0.000 high 0.093 | start60d Y30max 0.109 run 3
+   W0[6] out-band 0.146+0.098 | Y30 max 0.922 p95 0.813 | Y7 max 0.986 >a+.02 0.171 | exc30 2368.8 | run max 203.2 n>=24 40.4 | r sd 0.039 dr 0.0002 | cum-a 0.0598 | settle30 163.9 d | excess 4618 deficit -1 | after T1: settle 103.9 d, low 0.148 high 0.154 | start60d Y30max 0.114 run 4
+-- quiet1: threshold theta=0.05; silent 1 x 30 d from day 180, then edge-riding
+   G [7] out-band 0.209+0.368 | Y30 max 0.340 p95 0.340 | Y7 max 1.000 >a+.02 0.287 | exc30 690.0 | run max 978.0 n>=24 20.0 | r sd 0.035 dr 0.0173 | cum-a -0.0077 | mag int 104.3 | settle30   -   d | excess 687 deficit 193 | first run 708 | start60d Y30max 0.167 run 94
+   EV[3] out-band 0.000+0.122 | Y30 max 0.125 p95 0.101 | Y7 max 0.125 >a+.02 0.000 | exc30 5.0 | run max 6.0 n>=24 0.0 | r sd 0.044 dr 0.0288 | cum-a -0.0075 | mag int 8.8 | settle30 23.5 d | excess 6 deficit -1 | first run 6 | start60d Y30max 0.125 run 2
+   W0[6] out-band 0.627+0.327 | Y30 max 1.000 p95 0.482 | Y7 max 1.000 >a+.02 0.261 | exc30 1100.0 | run max 1388.0 n>=24 8.0 | r sd 0.037 dr 0.0002 | cum-a 0.0513 | mag int 145.2 | settle30   -   d | excess 1669 deficit -1 | first run 1388 | start60d Y30max 1.000 run 820
+-- quiet3: threshold theta=0.05; silent 3 x 30 d from day 180, then edge-riding
+   G [7] out-band 0.200+0.433 | Y30 max 0.490 p95 0.384 | Y7 max 1.000 >a+.02 0.268 | exc30 1123.0 | run max 1411.0 n>=24 20.0 | r sd 0.053 dr 0.0173 | cum-a -0.0008 | mag int 179.6 | settle30   -   d | excess 1322 deficit -1 | first run 1411 | start60d Y30max 0.167 run 94
+   EV[3] out-band 0.000+0.239 | Y30 max 0.125 p95 0.101 | Y7 max 0.125 >a+.02 0.000 | exc30 5.0 | run max 6.0 n>=24 0.0 | r sd 0.065 dr 0.0288 | cum-a -0.0198 | mag int 8.8 | settle30 23.5 d | excess 6 deficit -1 | first run 6 | start60d Y30max 0.125 run 2
+   W0[6] out-band 0.543+0.417 | Y30 max 1.000 p95 0.482 | Y7 max 1.000 >a+.02 0.226 | exc30 1100.0 | run max 1388.0 n>=24 8.0 | r sd 0.054 dr 0.0002 | cum-a 0.0311 | mag int 145.2 | settle30   -   d | excess 1669 deficit -1 | first run 1388 | start60d Y30max 1.000 run 820
+-- thr_d0: threshold theta=0.05, extra delay d=0
+   G [7] out-band 0.104+0.146 | Y30 max 0.167 p95 0.123 | Y7 max 0.266 >a+.02 0.423 | exc30 123.0 | run max 179.0 n>=24 28.0 | r sd 0.007 dr 0.0173 | cum-a -0.0021 | mag int 5.1 | start60d Y30max 0.167 run 94
+   EV[3] out-band 0.000+0.000 | Y30 max 0.125 p95 0.101 | Y7 max 0.125 >a+.02 0.000 | exc30 2.4 | run max 2.0 n>=24 0.0 | r sd 0.009 dr 0.0288 | cum-a 0.0001 | mag int 7.1 | start60d Y30max 0.125 run 2
+   W0[6] out-band 0.647+0.304 | Y30 max 1.000 p95 0.445 | Y7 max 1.000 >a+.02 0.255 | exc30 738.0 | run max 820.0 n>=24 8.0 | r sd 0.022 dr 0.0001 | cum-a 0.0385 | mag int 45.7 | start60d Y30max 1.000 run 820
+-- thr_d1: threshold theta=0.05, extra delay d=1
+   G [7] out-band 0.145+0.156 | Y30 max 0.181 p95 0.140 | Y7 max 0.491 >a+.02 0.338 | exc30 232.0 | run max 330.0 n>=24 18.0 | r sd 0.012 dr 0.0173 | cum-a -0.0010 | mag int 13.3 | start60d Y30max 0.170 run 137
+   EV[3] out-band 0.001+0.000 | Y30 max 0.133 p95 0.101 | Y7 max 0.133 >a+.02 0.001 | exc30 3.2 | run max 3.0 n>=24 0.0 | r sd 0.017 dr 0.0288 | cum-a 0.0001 | mag int 12.7 | start60d Y30max 0.133 run 3
+   W0[6] out-band 0.648+0.303 | Y30 max 1.000 p95 0.445 | Y7 max 1.000 >a+.02 0.256 | exc30 738.9 | run max 821.0 n>=24 8.0 | r sd 0.022 dr 0.0001 | cum-a 0.0389 | mag int 45.9 | start60d Y30max 1.000 run 821
+-- thr_d4: threshold theta=0.05, extra delay d=4
+   G [7] out-band 0.427+0.328 | Y30 max 0.204 p95 0.204 | Y7 max 0.874 >a+.02 0.233 | exc30 299.0 | run max 587.0 n>=24 10.0 | r sd 0.019 dr 0.0173 | cum-a -0.0041 | mag int 45.3 | start60d Y30max 0.184 run 252
+   EV[3] out-band 0.002+0.000 | Y30 max 0.154 p95 0.102 | Y7 max 0.154 >a+.02 0.002 | exc30 5.6 | run max 6.0 n>=24 0.0 | r sd 0.042 dr 0.0288 | cum-a 0.0001 | mag int 29.7 | start60d Y30max 0.154 run 6
+   W0[6] out-band 0.649+0.302 | Y30 max 1.000 p95 0.447 | Y7 max 1.000 >a+.02 0.257 | exc30 741.6 | run max 824.0 n>=24 8.0 | r sd 0.022 dr 0.0001 | cum-a 0.0400 | mag int 46.6 | start60d Y30max 1.000 run 824
+== TEST criterion J for every candidate (mean over test scenarios) ==
+  G : 0:0.633, 1:0.653, 2:0.541, 3:0.428, 4:0.637, 5:0.670, 6:0.564, 7:0.421 | selected 7 -> 0.421; best-on-test 7 {'gamma': 3.75, 'u': 0.15}
+  EV: 0:0.094, 1:0.054, 2:0.043, 3:0.043, 4:0.125, 5:0.094, 6:0.083, 7:0.165 | selected 3 -> 0.043; best-on-test 2 {'kappa': 0.008, 'l': -0.1, 'u': 0.2}
+  W0: 0:0.637, 1:0.533, 2:0.600, 3:0.869, 4:0.637, 5:0.549, 6:0.627, 7:0.829 | selected 6 -> 0.627; best-on-test 1 {'kappa': 0.0001189911678050995, 'l': -0.1, 'u': 0.2}
+== supplementary: beyond the fast edge of the grid (tuning set, seeds 1,2) ==
+  G {'gamma': 3.75, 'u': 0.2}: J=0.4688  (stat_s20: dr max 0.0040, r sd 0.0259)
+  G {'gamma': 0.9375, 'u': 0.2}: J=0.3535  (stat_s20: dr max 0.0160, r sd 0.0401)
+  G {'gamma': 1.2, 'u': 0.2}: J=0.4030  (stat_s20: dr max 0.0125, r sd 0.0350)
+  G {'gamma': 3.75, 'u': 0.15}: J=0.4607  (stat_s20: dr max 0.0040, r sd 0.0206)
+  G {'gamma': 0.9375, 'u': 0.15}: J=0.3171  (stat_s20: dr max 0.0160, r sd 0.0217)
+  G {'gamma': 1.2, 'u': 0.15}: J=0.3640  (stat_s20: dr max 0.0125, r sd 0.0209)
+  EV {'kappa': 0.032, 'l': -0.1, 'u': 0.2}: J=0.0761  (stat_s20: dr max 0.0288, r sd 0.0289)
+  EV {'kappa': 0.064, 'l': -0.1, 'u': 0.2}: J=0.0762  (stat_s20: dr max 0.0576, r sd 0.0419)
+  EV {'kappa': 0.128, 'l': -0.1, 'u': 0.2}: J=0.0762  (stat_s20: dr max 0.1152, r sd 0.0613)

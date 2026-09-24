@@ -1,0 +1,17 @@
+(A) symmetric coupling pa=sig(3(ra-1)+g(rb-1)), pb=sig(3(rb-1)+g(ra-1)); rates over 2nd half (T=20w)
+  g=2: TB rateA 0.100 rateB 0.100 rA_end 0.54 rB_end 0.50 | EVkE rateA 0.100 rateB 0.100 rA_end 0.54 rB_end 0.54 | W0 rateA 0.099 rateB 0.100 rA_end 0.54 rB_end 0.59
+  g=4: TB rateA 0.018 rateB 0.982 rA_end 5.00 rB_end -3.00 | EVkE rateA 0.018 rateB 0.981 rA_end 5.00 rB_end -3.00 | W0 rateA 0.773 rateB 0.014 rA_end -3.00 rB_end 5.00
+(B) cascade: A unreachable in [3w, 6w) (p_A >= 0.35 even at l=-3), B adjacent only while r_A > -1
+  TB    A returns above -1 after  2094 slots ( 21.8 d; -1 = not within 4w) | B longest run in [6w,9w) 225 (56.2 h), sum r in it 932, max box 0.188, max day 1.00
+  EF    A returns above -1 after  2892 slots ( 30.1 d; -1 = not within 4w) | B longest run in [6w,9w) 194 (48.5 h), sum r in it 771, max box 0.175, max day 1.00
+  EVDP  A returns above -1 after   429 slots (  4.5 d; -1 = not within 4w) | B longest run in [6w,9w)  78 (19.5 h), sum r in it 190, max box 0.125, max day 0.84
+  EVkE  A returns above -1 after  1152 slots ( 12.0 d; -1 = not within 4w) | B longest run in [6w,9w) 320 (80.0 h), sum r in it 802, max box 0.200, max day 1.00
+  WB    A returns above -1 after  2618 slots ( 27.3 d; -1 = not within 4w) | B longest run in [6w,9w) 359 (89.8 h), sum r in it 1618, max box 0.125, max day 1.00
+  W0    A returns above -1 after  9037 slots ( 94.1 d; -1 = not within 4w) | B longest run in [6w,9w)   0 (0.0 h), sum r in it 0, max box 0.000, max day 0.00
+(C) storage upper/lower exclusive channels, daily greedy arbitrage, 40 MWh nominal span, 60 windows
+  TB    up: rate 0.1000 Yw (0.1, 0.1) run 9 mag95 0.53 | low: rate 0.1000 Yw (0.1, 0.1) run 9 mag95 0.52 | std(daily mean r_up) 0.009
+  EF    up: rate 0.1000 Yw (0.1, 0.1) run 9 mag95 0.53 | low: rate 0.1000 Yw (0.1, 0.1) run 9 mag95 0.52 | std(daily mean r_up) 0.009
+  EVDP  up: rate 0.1000 Yw (0.1, 0.1) run 9 mag95 0.53 | low: rate 0.1000 Yw (0.1, 0.1) run 9 mag95 0.53 | std(daily mean r_up) 0.009
+  EVkE  up: rate 0.1000 Yw (0.1, 0.1) run 9 mag95 0.13 | low: rate 0.1000 Yw (0.1, 0.1) run 9 mag95 0.13 | std(daily mean r_up) 0.002
+  WB    up: rate 0.1000 Yw (0.1, 0.1) run 10 mag95 0.07 | low: rate 0.1000 Yw (0.1, 0.1) run 9 mag95 0.07 | std(daily mean r_up) 0.000
+  W0    up: rate 0.1019 Yw (0.1, 0.105) run 16 mag95 0.00 | low: rate 0.1022 Yw (0.1, 0.106) run 17 mag95 0.00 | std(daily mean r_up) 0.000

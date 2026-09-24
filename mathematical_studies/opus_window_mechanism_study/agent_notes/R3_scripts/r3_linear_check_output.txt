@@ -1,0 +1,22 @@
+w=24 beta=0.25 c=DP F'=1.90 (kI F'=7.60): spectral radius 1.06455
+w=24 beta=0.25 c=DP F'=1.99 (kI F'=7.96): spectral radius 1.20651
+w=24 beta=0.25 c=DP F'=2.01 (kI F'=8.04): spectral radius 1.23085
+w=24 beta=0.25 c=DP F'=2.10 (kI F'=8.40): spectral radius 1.33748
+w=24 beta=4.00 c=DP F'=1.90 (kI F'=0.47): spectral radius 0.97944
+w=24 beta=4.00 c=DP F'=1.99 (kI F'=0.50): spectral radius 1.00584
+w=24 beta=4.00 c=DP F'=2.01 (kI F'=0.50): spectral radius 1.04277
+w=24 beta=4.00 c=DP F'=2.10 (kI F'=0.53): spectral radius 1.15058
+w=96 beta=0.25 c=DP F'=1.90 (kI F'=7.60): spectral radius 0.99873
+w=96 beta=0.25 c=DP F'=1.99 (kI F'=7.96): spectral radius 1.04138
+w=96 beta=0.25 c=DP F'=2.01 (kI F'=8.04): spectral radius 1.06316
+w=96 beta=0.25 c=DP F'=2.10 (kI F'=8.40): spectral radius 1.15708
+w=96 beta=4.00 c=DP F'=1.90 (kI F'=0.47): spectral radius 0.99443
+w=96 beta=4.00 c=DP F'=1.99 (kI F'=0.50): spectral radius 0.99920
+w=96 beta=4.00 c=DP F'=2.01 (kI F'=0.50): spectral radius 1.02128
+w=96 beta=4.00 c=DP F'=2.10 (kI F'=0.53): spectral radius 1.11323
+EF quadratic g=30.0: max|z|=0.999827
+EF quadratic g=31.0: max|z|=0.999838
+EF quadratic g=31.5: max|z|=1.000458
+w=24 beta 0.25 c*=DP F'=1.6769  G*=160.98
+w=24 beta 1.0 c*=DP F'=1.8975  G*=45.54
+w=24 beta 4.0 c*=DP F'=1.9714  G*=11.83

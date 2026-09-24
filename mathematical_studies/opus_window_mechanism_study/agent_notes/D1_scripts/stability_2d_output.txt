@@ -1,0 +1,32 @@
+=== 1. P-only 判据核验：谱半径 ===
+w=10: c=0.03: 0.772417  c=0.5: 0.981001  c=0.9: 0.998299  c=0.99: 0.999853  c=1.01: 1.001781  c=1.1: 1.017788
+w=96: c=0.03: 0.993307  c=0.5: 0.999958  c=0.9: 0.999997  c=0.99: 1.000000  c=1.01: 1.000206  c=1.1: 1.002068
+w=400: c=0.03: 0.999759  c=0.5: 0.999999  c=0.9: 1.000000  c=0.99: 1.000000  c=1.01: 1.000050  c=1.1: 1.000500
+
+=== 2. 固定 gP 时积分通道的临界 G（及 w=96 的根核验） ===
+gP=    0.0: Gcrit(w=96)=   4.9344  Gcrit(w=2880)=   4.9348   rho(0.9x)=0.99916 rho(1.1x)=1.00075
+gP=    1.0: Gcrit(w=96)=   8.1444  Gcrit(w=2880)=   8.2289   rho(0.9x)=0.99895 rho(1.1x)=1.00090
+gP=    5.0: Gcrit(w=96)=  13.3460  Gcrit(w=2880)=  14.0594   rho(0.9x)=0.99963 rho(1.1x)=1.00036
+gP=   10.0: Gcrit(w=96)=  14.6785  Gcrit(w=2880)=  16.3340   rho(0.9x)=0.99987 rho(1.1x)=1.00013
+gP=   20.0: Gcrit(w=96)=  14.1790  Gcrit(w=2880)=  17.7922   rho(0.9x)=0.99997 rho(1.1x)=1.00003
+gP=   50.0: Gcrit(w=96)=   9.0883  Gcrit(w=2880)=  18.6442   rho(0.9x)=1.00000 rho(1.1x)=1.00000
+gP=   75.0: Gcrit(w=96)=   4.2036  Gcrit(w=2880)=  18.7228   rho(0.9x)=1.00000 rho(1.1x)=1.00000
+gP=  100.0: Gcrit(w=96)=      inf  Gcrit(w=2880)=  18.6785   
+gP=  200.0: Gcrit(w=96)=      inf  Gcrit(w=2880)=  18.1861   
+gP=  500.0: Gcrit(w=96)=      inf  Gcrit(w=2880)=  16.2472   
+gP= 1000.0: Gcrit(w=96)=      inf  Gcrit(w=2880)=  12.8596   
+gP= 2000.0: Gcrit(w=96)=      inf  Gcrit(w=2880)=  24.1016   
+
+=== 3. 超过临界后的增长率（每窗口 w*log rho，w=400）与窗口不可见模态估计 ===
+gP=  10.0 G=   5.0: growth/window=-0.0918   continuum near-2πik estimate=+0.0500
+gP=  10.0 G=  20.0: growth/window=+0.0335   continuum near-2πik estimate=+0.1978
+gP=  10.0 G=  45.0: growth/window=+0.1920   continuum near-2πik estimate=+0.4257
+gP=  10.0 G= 100.0: growth/window=+0.2609   continuum near-2πik estimate=+0.7804
+gP=  50.0 G=   5.0: growth/window=-0.0045   continuum near-2πik estimate=+0.0020
+gP=  50.0 G=  20.0: growth/window=+0.0013   continuum near-2πik estimate=+0.0080
+gP=  50.0 G=  45.0: growth/window=+0.0110   continuum near-2πik estimate=+0.0180
+gP=  50.0 G= 100.0: growth/window=+0.0303   continuum near-2πik estimate=+0.0396
+gP= 200.0 G=   5.0: growth/window=-0.0001   continuum near-2πik estimate=+0.0001
+gP= 200.0 G=  20.0: growth/window=+0.0003   continuum near-2πik estimate=+0.0005
+gP= 200.0 G=  45.0: growth/window=+0.0009   continuum near-2πik estimate=+0.0011
+gP= 200.0 G= 100.0: growth/window=+0.0022   continuum near-2πik estimate=+0.0025

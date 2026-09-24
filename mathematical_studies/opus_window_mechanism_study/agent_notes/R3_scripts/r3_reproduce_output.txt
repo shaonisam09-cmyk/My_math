@@ -1,0 +1,29 @@
+thr
+  W0  report-metric {'rate': 0.1022, 'Yw': (0.1, 0.108), 'Yday': 1.0, 'run': 312, 'mag95': 0.0, 'exceed': 0.4, 'acw': 0.443}
+  EV  report-metric {'rate': 0.1, 'Yw': (0.1, 0.1), 'Yday': 0.104, 'run': 1, 'mag95': 0.0, 'exceed': 0.0, 'acw': 0.969}
+  WB  report-metric {'rate': 0.1, 'Yw': (0.1, 0.1), 'Yday': 0.104, 'run': 1, 'mag95': 0.035, 'exceed': 329.8, 'acw': 0.969}
+  TB  report-metric {'rate': 0.1, 'Yw': (0.1, 0.1), 'Yday': 0.104, 'run': 1, 'mag95': 0.006, 'exceed': 57.4, 'acw': 0.917}
+thr quiet-first 2w
+  W0  report-metric {'rate': 0.1059, 'Yw': (0.1, 0.657), 'Yday': 1.0, 'run': 312, 'mag95': 0.0, 'exceed': 1.6, 'acw': 0.881}
+      from recovery : Yw=(0.0, 0.657) Yday=1.0 run=1892 first_run=1892 (473.0 h) mag_first_run: mean 1.01, #steps at r>=u-1e-9: 0, sum r=1918
+  EV  report-metric {'rate': 0.1, 'Yw': (0.1, 0.2), 'Yday': 0.104, 'run': 1, 'mag95': 0.0, 'exceed': 0.0, 'acw': 0.968}
+      from recovery : Yw=(0.0, 0.2) Yday=1.0 run=320 first_run=320 (80.0 h) mag_first_run: mean 2.51, #steps at r>=u-1e-9: 1, sum r=802
+  WB  report-metric {'rate': 0.1033, 'Yw': (0.1, 0.124), 'Yday': 1.0, 'run': 210, 'mag95': 0.07, 'exceed': 464.5, 'acw': 0.964}
+      from recovery : Yw=(0.0, 0.125) Yday=1.0 run=359 first_run=359 (89.8 h) mag_first_run: mean 4.51, #steps at r>=u-1e-9: 288, sum r=1618
+  TB  report-metric {'rate': 0.1017, 'Yw': (0.1, 0.187), 'Yday': 0.156, 'run': 1, 'mag95': 0.006, 'exceed': 42.8, 'acw': 0.539}
+      from recovery : Yw=(0.0, 0.188) Yday=1.0 run=225 first_run=225 (56.2 h) mag_first_run: mean 4.14, #steps at r>=u-1e-9: 148, sum r=932
+intermittent 30%
+  W0  report-metric {'rate': 0.1303, 'Yw': (0.0, 0.267), 'Yday': 1.0, 'run': 384, 'mag95': 0.626, 'exceed': 1377.2, 'acw': 0.012}
+  EV  report-metric {'rate': 0.0992, 'Yw': (0.014, 0.163), 'Yday': 1.0, 'run': 192, 'mag95': 1.517, 'exceed': 3958.1, 'acw': 0.069}
+  WB  report-metric {'rate': 0.097, 'Yw': (0.0, 0.122), 'Yday': 1.0, 'run': 248, 'mag95': 5.0, 'exceed': 24400.4, 'acw': 0.238}
+  TB  report-metric {'rate': 0.0982, 'Yw': (0.014, 0.14), 'Yday': 1.0, 'run': 192, 'mag95': 4.83, 'exceed': 12211.4, 'acw': 0.031}
+logistic
+  W0  report-metric {'rate': 0.0999, 'Yw': (0.081, 0.126), 'Yday': 0.24, 'run': 5, 'mag95': 0.3, 'exceed': 2481.0, 'acw': -0.005}
+  EV  report-metric {'rate': 0.0999, 'Yw': (0.094, 0.106), 'Yday': 0.208, 'run': 5, 'mag95': 0.347, 'exceed': 2506.1, 'acw': -0.004}
+  WB  report-metric {'rate': 0.0999, 'Yw': (0.097, 0.104), 'Yday': 0.219, 'run': 4, 'mag95': 0.567, 'exceed': 2799.4, 'acw': 0.019}
+  TB  report-metric {'rate': 0.1, 'Yw': (0.097, 0.103), 'Yday': 0.177, 'run': 4, 'mag95': 0.446, 'exceed': 2623.4, 'acw': -0.004}
+logistic step->harder
+  W0  report-metric {'rate': 0.0982, 'Yw': (0.032, 0.134), 'Yday': 0.24, 'run': 5, 'mag95': 0.812, 'exceed': 4857.8, 'acw': -0.004}
+  EV  report-metric {'rate': 0.0996, 'Yw': (0.087, 0.106), 'Yday': 0.208, 'run': 5, 'mag95': 0.837, 'exceed': 4978.1, 'acw': -0.003}
+  WB  report-metric {'rate': 0.0996, 'Yw': (0.095, 0.103), 'Yday': 0.229, 'run': 5, 'mag95': 1.007, 'exceed': 5289.4, 'acw': 0.02}
+  TB  report-metric {'rate': 0.0996, 'Yw': (0.093, 0.103), 'Yday': 0.177, 'run': 4, 'mag95': 0.908, 'exceed': 5088.6, 'acw': -0.003}

@@ -1,0 +1,46 @@
+thr
+  TB    rate 0.1000 Yw (0.1, 0.1) Yday 0.104 run 1 mag95 0.006 exceed 57 acw 0.917 r_std 0.002
+  EF    rate 0.1000 Yw (0.1, 0.1) Yday 0.104 run 1 mag95 0.006 exceed 57 acw 0.905 r_std 0.002
+  EVDP  rate 0.1000 Yw (0.1, 0.1) Yday 0.104 run 1 mag95 0.007 exceed 66 acw 0.969 r_std 0.002
+  EVkE  rate 0.1000 Yw (0.1, 0.1) Yday 0.104 run 1 mag95 0.000 exceed 0 acw 0.969 r_std 0.005
+thr quiet 2w (metrics from recovery)
+  TB    rate 0.1044 Yw (0.0, 0.188) Yday 1.0 run 225 mag95 0.007 exceed 976 acw 0.513 r_std 0.214 first_run=225
+  EF    rate 0.1031 Yw (0.0, 0.175) Yday 1.0 run 192 mag95 0.007 exceed 807 acw 0.527 r_std 0.192 first_run=192
+  EVDP  rate 0.1008 Yw (0.0, 0.125) Yday 0.844 run 80 mag95 0.002 exceed 220 acw 0.962 r_std 0.085 first_run=80
+  EVkE  rate 0.1031 Yw (0.0, 0.2) Yday 1.0 run 320 mag95 0.000 exceed 802 acw 0.940 r_std 0.169 first_run=320
+intermittent 30%
+  TB    rate 0.0982 Yw (0.014, 0.14) Yday 1.0 run 192 mag95 4.830 exceed 12211 acw 0.031 r_std 1.528
+  EF    rate 0.0983 Yw (0.014, 0.141) Yday 1.0 run 174 mag95 4.354 exceed 11377 acw 0.024 r_std 1.492
+  EVDP  rate 0.0934 Yw (0.013, 0.125) Yday 0.844 run 80 mag95 3.866 exceed 10216 acw 0.057 r_std 1.512
+  EVkE  rate 0.0992 Yw (0.014, 0.163) Yday 1.0 run 192 mag95 1.517 exceed 3958 acw 0.069 r_std 0.587
+logistic
+  TB    rate 0.1000 Yw (0.097, 0.103) Yday 0.177 run 4 mag95 0.446 exceed 2623 acw -0.004 r_std 0.105
+  EF    rate 0.1000 Yw (0.097, 0.103) Yday 0.177 run 4 mag95 0.445 exceed 2628 acw -0.004 r_std 0.104
+  EVDP  rate 0.1000 Yw (0.097, 0.103) Yday 0.177 run 4 mag95 0.448 exceed 2642 acw -0.005 r_std 0.105
+  EVkE  rate 0.0999 Yw (0.094, 0.106) Yday 0.208 run 5 mag95 0.347 exceed 2506 acw -0.004 r_std 0.051
+logistic step->harder
+  TB    rate 0.0996 Yw (0.093, 0.103) Yday 0.177 run 4 mag95 0.908 exceed 5089 acw -0.003 r_std 0.271
+  EF    rate 0.0996 Yw (0.093, 0.103) Yday 0.177 run 4 mag95 0.907 exceed 5095 acw -0.003 r_std 0.270
+  EVDP  rate 0.0999 Yw (0.095, 0.103) Yday 0.177 run 4 mag95 0.910 exceed 5141 acw -0.005 r_std 0.271
+  EVkE  rate 0.0996 Yw (0.087, 0.106) Yday 0.208 run 5 mag95 0.837 exceed 4978 acw -0.003 r_std 0.254
+thr delay d=4
+  TB    rate 0.1000 Yw (0.099, 0.101) Yday 0.104 run 5 mag95 0.034 exceed 190 acw -0.108 r_std 0.007
+  EF    rate 0.1000 Yw (0.099, 0.101) Yday 0.104 run 5 mag95 0.034 exceed 188 acw -0.108 r_std 0.007
+  EVDP  rate 0.1000 Yw (0.099, 0.101) Yday 0.104 run 5 mag95 0.028 exceed 132 acw -0.108 r_std 0.005
+  EVkE  rate 0.2632 Yw (0.262, 0.264) Yday 0.271 run 5 mag95 0.007 exceed 86 acw -0.346 r_std 0.008
+theta step +1 at t=10w (l=-2, lb=-3): cumulative sum(Y-alpha) after step, box range
+  TB    sum(Y-a)=-57.2  box range (0.0896, 0.1000)
+  EF    sum(Y-a)=-57.2  box range (0.0892, 0.1000)
+  EVDP  sum(Y-a)=-14.2  box range (0.0948, 0.1000)
+  EVkE  sum(Y-a)=-57.6  box range (0.0799, 0.1000)
+two-channel asymmetric coupling (report toy: s=3, l=-3, u=5, lb=-3), w=2880, T=40w, second half
+  d=0 g=3: TB A(0.098, 0.103) B(0.097, 0.103) rstd 0.11 | EF A(0.098, 0.103) B(0.097, 0.103) rstd 0.11 | EVDP A(0.097, 0.103) B(0.097, 0.103) rstd 0.11 | EVkE A(0.095, 0.105) B(0.094, 0.105) rstd 0.05
+  d=0 g=6: TB A(0.098, 0.104) B(0.097, 0.103) rstd 0.11 | EF A(0.098, 0.103) B(0.097, 0.103) rstd 0.11 | EVDP A(0.097, 0.103) B(0.097, 0.103) rstd 0.11 | EVkE A(0.093, 0.105) B(0.095, 0.105) rstd 0.05
+  d=0 g=20: TB A(0.095, 0.104) B(0.094, 0.106) rstd 0.16 | EF A(0.094, 0.105) B(0.094, 0.106) rstd 0.16 | EVDP A(0.096, 0.104) B(0.094, 0.106) rstd 0.16 | EVkE A(0.093, 0.106) B(0.093, 0.107) rstd 0.06
+  d=0 g=28: TB A(0.095, 0.105) B(0.094, 0.106) rstd 0.19 | EF A(0.095, 0.106) B(0.093, 0.107) rstd 0.20 | EVDP A(0.093, 0.106) B(0.093, 0.107) rstd 0.22 | EVkE A(0.092, 0.107) B(0.091, 0.11) rstd 0.07
+  d=0 g=35: TB A(0.094, 0.106) B(0.092, 0.109) rstd 0.25 | EF A(0.094, 0.105) B(0.094, 0.106) rstd 0.22 | EVDP A(0.094, 0.107) B(0.093, 0.107) rstd 0.25 | EVkE A(0.092, 0.109) B(0.09, 0.109) rstd 0.08
+  d=0 g=45: TB A(0.093, 0.107) B(0.093, 0.107) rstd 0.26 | EF A(0.093, 0.106) B(0.092, 0.107) rstd 0.26 | EVDP A(0.093, 0.107) B(0.093, 0.108) rstd 0.28 | EVkE A(0.089, 0.111) B(0.087, 0.113) rstd 0.10
+  d=1 g=6: TB A(0.097, 0.103) B(0.097, 0.103) rstd 0.12 | EF A(0.097, 0.103) B(0.097, 0.103) rstd 0.12 | EVDP A(0.097, 0.103) B(0.097, 0.103) rstd 0.12 | EVkE A(0.094, 0.105) B(0.095, 0.105) rstd 0.05
+  d=1 g=15: TB A(0.095, 0.105) B(0.094, 0.106) rstd 0.19 | EF A(0.095, 0.105) B(0.095, 0.106) rstd 0.17 | EVDP A(0.094, 0.105) B(0.094, 0.106) rstd 0.20 | EVkE A(0.094, 0.106) B(0.094, 0.107) rstd 0.06
+  d=1 g=20: TB A(0.093, 0.107) B(0.092, 0.108) rstd 0.25 | EF A(0.094, 0.105) B(0.093, 0.107) rstd 0.25 | EVDP A(0.093, 0.106) B(0.092, 0.108) rstd 0.26 | EVkE A(0.092, 0.108) B(0.09, 0.11) rstd 0.07
+  d=1 g=28: TB A(0.092, 0.108) B(0.092, 0.109) rstd 0.36 | EF A(0.093, 0.108) B(0.092, 0.11) rstd 0.35 | EVDP A(0.091, 0.108) B(0.091, 0.109) rstd 0.38 | EVkE A(0.089, 0.11) B(0.087, 0.113) rstd 0.10

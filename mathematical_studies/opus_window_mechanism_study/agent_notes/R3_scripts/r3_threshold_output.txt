@@ -1,0 +1,36 @@
+== (1) non-integer w*alpha, threshold theta=0, l=0 ==
+  w=  95 (w*alpha=9.5) lb= 0.0: rate 0.10790  box Y (0.105, 0.116)  run 1  b in (0.0, 0.0)  tri in (0.09803, 0.11842)
+  w=  95 (w*alpha=9.5) lb=-1.0: rate 0.10000  box Y (0.095, 0.105)  run 1  b in (-0.0255, -0.025)  tri in (0.09079, 0.10965)
+  w=  96 (w*alpha=9.6) lb= 0.0: rate 0.10830  box Y (0.104, 0.115)  run 1  b in (0.0, 0.0)  tri in (0.09815, 0.11834)
+  w=  96 (w*alpha=9.6) lb=-1.0: rate 0.10000  box Y (0.094, 0.104)  run 1  b in (-0.0254, -0.025)  tri in (0.09085, 0.10954)
+  w=  97 (w*alpha=9.7) lb= 0.0: rate 0.10820  box Y (0.103, 0.113)  run 1  b in (0.0, 0.0)  tri in (0.09825, 0.11824)
+  w=  97 (w*alpha=9.7) lb=-1.0: rate 0.10000  box Y (0.093, 0.103)  run 1  b in (-0.0254, -0.025)  tri in (0.09089, 0.1094)
+  w=2883 (w*alpha=288.3) lb= 0.0: rate 0.10030  box Y (0.1, 0.101)  run 1  b in (0.0, 0.0)  tri in (0.09993, 0.10062)
+  w=2883 (w*alpha=288.3) lb=-1.0: rate 0.10000  box Y (0.1, 0.1)  run 1  b in (-0.0252, -0.0252)  tri in (0.09969, 0.10031)
+  w=2885 (w*alpha=288.5) lb= 0.0: rate 0.10030  box Y (0.1, 0.101)  run 1  b in (0.0, 0.0)  tri in (0.09993, 0.10062)
+  w=2885 (w*alpha=288.5) lb=-1.0: rate 0.10000  box Y (0.1, 0.1)  run 1  b in (-0.0252, -0.0252)  tri in (0.09969, 0.10031)
+  w=2880 (w*alpha=288.0) lb= 0.0: rate 0.10030  box Y (0.1, 0.1)  run 1  b in (0.0, 0.0)  tri in (0.09993, 0.10062)
+  w=2880 (w*alpha=288.0) lb=-1.0: rate 0.10000  box Y (0.1, 0.1)  run 1  b in (-0.0252, -0.0252)  tri in (0.09969, 0.10031)
+== (2) extra delay d (O_{t+1+d}=1{r_t>0}), w=2880, lb=-1 ==
+  d=0: TB rate 0.1000 box Y (0.1, 0.1) run 1 b (-0.0252, -0.0252) | EV(DP) rate 0.1000 box (0.1, 0.1) run 1
+  d=1: TB rate 0.1000 box Y (0.1, 0.1) run 2 b (-0.0505, -0.0505) | EV(DP) rate 0.1539 box (0.153, 0.154) run 2
+  d=2: TB rate 0.1000 box Y (0.1, 0.1) run 3 b (-0.0739, -0.0739) | EV(DP) rate 0.2000 box (0.2, 0.2) run 3
+  d=4: TB rate 0.1000 box Y (0.099, 0.101) run 5 b (-0.1228, -0.1225) | EV(DP) rate 0.2631 box (0.262, 0.264) run 5
+  d=8: TB rate 0.1000 box Y (0.1, 0.1) run 9 b (-0.2219, -0.2219) | EV(DP) rate 0.3334 box (0.331, 0.334) run 9
+== (3) theta step at t=10w (w=2880, l=-2, lb=-3): cumulative sum(Y-alpha) vs -dtheta/kI ==
+  dtheta=+1.0: TB sum(Y-a)=-57.2 (theory -dth/kI=-57.5), box Y range (np.float64(0.0896), np.float64(0.1)), b end 0.970 | EV(DP) sum=-14.2 (theory -14.3), box range (np.float64(0.0948), np.float64(0.1))
+  dtheta=-1.0: TB sum(Y-a)=57.5 (theory -dth/kI=57.5), box Y range (np.float64(0.1), np.float64(0.1108)), b end -1.026 | EV(DP) sum=14.3 (theory 14.3), box range (np.float64(0.1), np.float64(0.1052))
+== (4) theta ramp: theta_t = -t/2880 (1 unit per 30 days), l=-60 ==
+  TB              last-10-window rate 0.1200 (bias 0.0200; rho/kI=0.0200, rho/DP=0.0050)  box (0.12, 0.12)
+  EF(non-window)  last-10-window rate 0.1200 (bias 0.0200; rho/kI=0.0200, rho/DP=0.0050)  box (0.12, 0.12)
+  EV(kI)          last-10-window rate 0.1200 (bias 0.0200; rho/kI=0.0200, rho/DP=0.0050)  box (0.12, 0.12)
+  EV(DP)          last-10-window rate 0.1050 (bias 0.0050; rho/kI=0.0200, rho/DP=0.0050)  box (0.105, 0.105)
+== (5) rho = kI/DP sweep, threshold theta=0.5 (b must travel 0 -> 0.5), w=2880 ==
+  DP=0.0700 rho=0.25: rate 0.1000 box Y (0.1, 0.1) run 1  b(last 20w) (0.4689, 0.4689)  tri (0.09969, 0.10031)
+  DP=0.0350 rho=0.50: rate 0.1000 box Y (0.1, 0.1) run 1  b(last 20w) (0.4846, 0.4846)  tri (0.09969, 0.10031)
+  DP=0.0174 rho=1.00: rate 0.1000 box Y (0.1, 0.1) run 1  b(last 20w) (0.4933, 0.4933)  tri (0.09969, 0.10031)
+  DP=0.0100 rho=1.74: rate 0.1000 box Y (0.1, 0.1) run 1  b(last 20w) (0.4961, 0.4961)  tri (0.09966, 0.10036)
+  DP=0.0050 rho=3.48: rate 0.1000 box Y (0.1, 0.1) run 1  b(last 20w) (0.4981, 0.4981)  tri (0.09967, 0.10037)
+== (6) l = theta with solver tolerance: plant counts O=1{r > -1e-9} (theta slightly below l=0) ==
+  TB l=0.00: rate 1.0000 box (1.0, 1.0) run 28800
+  TB l=-0.01: rate 0.1000 box (0.1, 0.1) run 1

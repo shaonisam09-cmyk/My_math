@@ -1,0 +1,7 @@
+A identity/bounds intervals checked: 90294
+B asymmetric==symmetric paths checked: 300
+C D_theta certificate intervals checked: 309720  max(run/bound): 1
+C2 recovery run tightness cases: 300
+D uniform no-clip necessity cases: 300
+E W0 counterexample: {'W0_window_rate': '1', 'W0_clips': 0, 'W0_final_r': '0', 'EV_style_bound': '11/20', 'EV_Cplus_same_path': '9/2'}
+F gated-update identity intervals checked: 60553

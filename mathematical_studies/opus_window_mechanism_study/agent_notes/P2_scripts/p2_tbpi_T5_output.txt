@@ -1,0 +1,48 @@
+C:\Users\wxt18\Desktop\learning-assist\mian_space_new_processed\adaptive_mpc (1)\opus_window_mechanism_study\agent_notes\P2_scripts\p2_tbpi_T5_roots.py:73: RuntimeWarning: overflow encountered in exp
+  f = np.exp(s) * (s - 1) + 1
+C:\Users\wxt18\Desktop\learning-assist\mian_space_new_processed\adaptive_mpc (1)\opus_window_mechanism_study\agent_notes\P2_scripts\p2_tbpi_T5_roots.py:73: RuntimeWarning: invalid value encountered in scalar multiply
+  f = np.exp(s) * (s - 1) + 1
+C:\Users\wxt18\Desktop\learning-assist\mian_space_new_processed\adaptive_mpc (1)\opus_window_mechanism_study\agent_notes\P2_scripts\p2_tbpi_T5_roots.py:74: RuntimeWarning: overflow encountered in exp
+  fp = np.exp(s) * s
+C:\Users\wxt18\Desktop\learning-assist\mian_space_new_processed\adaptive_mpc (1)\opus_window_mechanism_study\agent_notes\P2_scripts\p2_tbpi_T5_roots.py:74: RuntimeWarning: invalid value encountered in scalar multiply
+  fp = np.exp(s) * s
+C:\Users\wxt18\Desktop\learning-assist\mian_space_new_processed\adaptive_mpc (1)\opus_window_mechanism_study\agent_notes\P2_scripts\p2_tbpi_T5_roots.py:77: RuntimeWarning: invalid value encountered in scalar divide
+  s = s - f / fp
+C:\Users\wxt18\Desktop\learning-assist\mian_space_new_processed\adaptive_mpc (1)\opus_window_mechanism_study\agent_notes\P2_scripts\p2_tbpi_T5_roots.py:73: RuntimeWarning: overflow encountered in scalar multiply
+  f = np.exp(s) * (s - 1) + 1
+C:\Users\wxt18\Desktop\learning-assist\mian_space_new_processed\adaptive_mpc (1)\opus_window_mechanism_study\agent_notes\P2_scripts\p2_tbpi_T5_roots.py:74: RuntimeWarning: overflow encountered in scalar multiply
+  fp = np.exp(s) * s
+(a) 实 c 临界值（二分，谱半径=1）
+  w=  1: 数值临界 1.000000000，预测 1.000000000
+  w=  2: 数值临界 2.000000000，预测 2.000000000
+  w=  3: 数值临界 1.500000000，预测 1.500000000
+  w=  4: 数值临界 2.000000000，预测 2.000000000
+  w=  5: 数值临界 1.666666667，预测 1.666666667
+  w=  7: 数值临界 1.750000000，预测 1.750000000
+  w= 95: 数值临界 1.979166667，预测 1.979166667
+  w= 96: 数值临界 2.000000000，预测 2.000000000
+  w=479: 数值临界 1.995833333，预测 1.995833333
+  w=480: 数值临界 2.000000000，预测 2.000000000
+  w=1..60,95,96,479,480 的最大偏差 = 6.21e-11
+
+(b) H 闭式与实轴交点
+  闭式与直接求和的最大偏差（w=2,3,7,24,96）= 3.81e-10
+  w=2: (0,2π) 内 Im H 变号处 θ/π = []，H(-1) = -0.500000
+  w=3: (0,2π) 内 Im H 变号处 θ/π = [1.]，H(-1) = -0.666667
+  w=24: (0,2π) 内 Im H 变号处 θ/π = [0.9999]，H(-1) = -0.500000
+  w=25: (0,2π) 内 Im H 变号处 θ/π = [0.9999]，H(-1) = -0.520000
+  w=96: (0,2π) 内 Im H 变号处 θ/π = [0.9999]，H(-1) = -0.500000
+
+(c) φ(s)=e^s(s-1)+1 在 |Im s|<=60, -8<=Re s<=2 内的零点（Newton 多起点）
+  非零零点个数 18，实部最大值 -2.0888；前几个：[(-2.0888-7.4615j), (-2.0888+7.4615j), (-2.6641-13.8791j), (-2.6641+13.8791j), (-3.0263-20.2238j), (-3.0263+20.2238j)]
+
+(d) 复 c：沿 Re c = a 的最大 |Im c|/Re c（稳定）。圆盘 |1-c|<1 给出 sqrt((2-a)/a)
+  w=  24: a=0.5: 1.7321（圆盘 1.7321）；a=0.2: 3.0707（圆盘 3.0000）；a=0.05: 7.7902（圆盘 6.2450）；a=0.01: 18.8304（圆盘 14.1067）
+  w=  96: a=0.5: 1.7321（圆盘 1.7321）；a=0.2: 2.9828（圆盘 3.0000）；a=0.05: 6.2244（圆盘 6.2450）；a=0.01: 22.6239（圆盘 14.1067）
+  w= 480: a=0.5: 1.7321（圆盘 1.7321）；a=0.2: 3.0168（圆盘 3.0000）；a=0.05: 6.3257（圆盘 6.2450）；a=0.01: 15.1333（圆盘 14.1067）
+  w=2880（Nyquist 曲线）: a=0.5: 1.7321（圆盘 1.7321）；a=0.2: 2.9997（圆盘 3.0000）；a=0.05: 6.2500（圆盘 6.2450）；a=0.01: 14.1095（圆盘 14.1067）
+
+(e) |c| ~ 1/w 的缩放区域：给定 |c| = m/w，稳定的最大 |arg c|（度），圆盘的对应值为 arccos(|c|/2)
+  w=96: |c|=0.5/w: 180.00°（圆盘 89.85°）；|c|=2.0/w: 168.17°（圆盘 89.40°）；|c|=10.0/w: 91.17°（圆盘 87.01°）；|c|=40.0/w: 80.49°（圆盘 77.98°）
+  w=480: |c|=0.5/w: 180.00°（圆盘 89.97°）；|c|=2.0/w: 174.76°（圆盘 89.88°）；|c|=10.0/w: 94.22°（圆盘 89.40°）；|c|=40.0/w: 88.91°（圆盘 87.61°）
+done

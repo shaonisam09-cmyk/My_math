@@ -1,0 +1,27 @@
+thr
+  W0(stable) {'rate': np.float64(0.1003), 'Yw': (np.float64(0.1), np.float64(0.1)), 'Yday': np.float64(0.115), 'run': 1, 'mag95': 0.0, 'acw': -0.108}
+  EV l=-k    {'rate': np.float64(0.1), 'Yw': (np.float64(0.1), np.float64(0.1)), 'Yday': np.float64(0.104), 'run': 1, 'mag95': 0.0, 'acw': 0.969}
+  WB box     {'rate': np.float64(0.1), 'Yw': (np.float64(0.1), np.float64(0.1)), 'Yday': np.float64(0.104), 'run': 1, 'mag95': 0.035, 'acw': 0.969}
+  TB tri     {'rate': np.float64(0.1), 'Yw': (np.float64(0.1), np.float64(0.1)), 'Yday': np.float64(0.104), 'run': 1, 'mag95': 0.006, 'acw': 0.917}
+thr quiet-first 2w
+  W0(stable) {'rate': np.float64(0.1059), 'Yw': (np.float64(0.1), np.float64(0.657)), 'Yday': np.float64(1.0), 'run': 312, 'mag95': 0.0, 'acw': 0.881}
+  EV l=-k    {'rate': np.float64(0.1), 'Yw': (np.float64(0.1), np.float64(0.2)), 'Yday': np.float64(0.104), 'run': 1, 'mag95': 0.0, 'acw': 0.968}
+  WB box     {'rate': np.float64(0.1033), 'Yw': (np.float64(0.1), np.float64(0.124)), 'Yday': np.float64(1.0), 'run': 210, 'mag95': 0.07, 'acw': 0.964}
+  TB tri     {'rate': np.float64(0.1017), 'Yw': (np.float64(0.1), np.float64(0.187)), 'Yday': np.float64(0.156), 'run': 1, 'mag95': 0.006, 'acw': 0.539}
+intermittent 30%
+  W0(stable) {'rate': np.float64(0.1312), 'Yw': (np.float64(0.0), np.float64(0.267)), 'Yday': np.float64(1.0), 'run': 480, 'mag95': 0.62, 'acw': 0.02}
+  EV l=-k    {'rate': np.float64(0.0992), 'Yw': (np.float64(0.014), np.float64(0.163)), 'Yday': np.float64(1.0), 'run': 192, 'mag95': 1.517, 'acw': 0.069}
+  WB box     {'rate': np.float64(0.097), 'Yw': (np.float64(0.0), np.float64(0.122)), 'Yday': np.float64(1.0), 'run': 248, 'mag95': 5.0, 'acw': 0.238}
+  TB tri     {'rate': np.float64(0.0982), 'Yw': (np.float64(0.014), np.float64(0.14)), 'Yday': np.float64(1.0), 'run': 192, 'mag95': 4.83, 'acw': 0.031}
+logistic
+  W0(stable) {'rate': np.float64(0.0999), 'Yw': (np.float64(0.081), np.float64(0.126)), 'Yday': np.float64(0.24), 'run': 5, 'mag95': 0.3, 'acw': -0.005}
+  EV l=-k    {'rate': np.float64(0.0999), 'Yw': (np.float64(0.094), np.float64(0.106)), 'Yday': np.float64(0.208), 'run': 5, 'mag95': 0.347, 'acw': -0.004}
+  WB box     {'rate': np.float64(0.0999), 'Yw': (np.float64(0.097), np.float64(0.104)), 'Yday': np.float64(0.219), 'run': 4, 'mag95': 0.567, 'acw': 0.019}
+  TB tri     {'rate': np.float64(0.1), 'Yw': (np.float64(0.097), np.float64(0.103)), 'Yday': np.float64(0.177), 'run': 4, 'mag95': 0.446, 'acw': -0.004}
+logistic step->harder
+  W0(stable) {'rate': np.float64(0.0982), 'Yw': (np.float64(0.032), np.float64(0.134)), 'Yday': np.float64(0.24), 'run': 5, 'mag95': 0.812, 'acw': -0.004}
+  EV l=-k    {'rate': np.float64(0.0996), 'Yw': (np.float64(0.087), np.float64(0.106)), 'Yday': np.float64(0.208), 'run': 5, 'mag95': 0.837, 'acw': -0.003}
+  WB box     {'rate': np.float64(0.0996), 'Yw': (np.float64(0.095), np.float64(0.103)), 'Yday': np.float64(0.229), 'run': 5, 'mag95': 1.007, 'acw': 0.02}
+  TB tri     {'rate': np.float64(0.0996), 'Yw': (np.float64(0.093), np.float64(0.103)), 'Yday': np.float64(0.177), 'run': 4, 'mag95': 0.908, 'acw': -0.003}
+
+[exited with code 0]

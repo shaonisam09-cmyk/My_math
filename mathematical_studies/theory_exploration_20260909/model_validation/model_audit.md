@@ -1,0 +1,205 @@
+# Paper-model validation: independent audit
+
+Date: 2026-09-09. Source: the specified `IEEE-conference-template-062824.tex` only. No old MATLAB implementation was used and the manuscript was not edited.
+
+The user ultimately confirmed: **“没有额外误差，就按论文公式递推”**. This supersedes the earlier withdrawn answer about an additional disturbance law. The audit below therefore uses exact recursion according to the paper, while distinguishing current measured exogenous inputs from future forecasts and distinguishing postdecision from premeasurement conditioning.
+
+## 1. Status summary
+
+| Question | Status | Precise conclusion |
+|---|---|---|
+| First-step battery/thermal prediction error under the confirmed closure | Proved | Both signed state residual errors are zero when the same measured initial state and deployed commands are propagated by the same stated equations. |
+| Postdecision conditional violation probabilities | Proved | They are zero or one; this does not imply unconditional frequencies must be zero or one. |
+| Paper's coarser premeasurement conditional probabilities | Conditional / unidentified numerically | They can average over the current exogenous input before it is observed; identifying them needs its conditional law and the corresponding optimizer selection. |
+| ESS oracle/positive attainable interval on the full state domain | Refuted under exact recursion | A nonempty safe interior core cannot violate either ESS limit in one step under any allowed action. |
+| Uniform positive high-relaxation response on an unrestricted ESS state domain | Refuted | It fails on feasible core states if arbitrarily large relaxations are admitted there. This does not refute every possible multistep stability proof. |
+| Nondegenerate probability-selector approximation using the previous absolute mismatch bound | Refuted as a route to asymptotic $O(1/w)$ under postdecision conditioning | Binary conditional probabilities stay a fixed distance from interior reference probabilities; the actual controller could nevertheless have good error by another argument. |
+| Per-group terminal workload bounds imply joint future CPU feasibility | Refuted | A deadline example with the paper's $H,D_k,M_k^D$ passes each terminal bound but cannot jointly finish after a permitted first action. |
+| Full physical-state/queue invariance, optimality of a deliberately bad first action | Not established | The workload counterexample concerns the claimed feasibility sufficiency, not a proven economic optimizer choice or the measured experiment. |
+| Nominal ESS bounds retained alongside relaxed bounds | Formulation ambiguity | Literal inclusion of all `eq:Ebs` retains hard nominal bounds; intended replacement must exclude its nominal-bound subequation. Both readings are distinguished below. |
+
+## 2. Information timing and exact error maps
+
+The paper explicitly states that current state and current exogenous inputs are measured before optimization, while future exogenous quantities are forecast. Its implementation deploys first-step workload, chilled-water setpoint, and charge/discharge commands. The only stated subsequent correction changes renewable dispatch and grid import.
+
+Let $\mathcal G_t$ denote information after current measurements and the selected command are known. The paper's battery update is
+
+$$E_{t+1}=E_t+\Delta\tau\left(\eta_{\rm ch}p_t^{\rm ch}-p_t^{\rm dis}/\eta_{\rm dis}\right).$$
+
+Under the confirmed exact-recursion closure, the nominal calculation uses the same $E_t$, efficiencies, and deployed charge/discharge values. Hence
+
+$$E_{t+1}^{\rm real}=\widehat E_{t+1|t},\qquad e_{E,t+1}=0.$$
+
+The same reasoning applies to
+
+$$T_{t+1}^{\rm out}=T_t^{\rm out}+d_1p_t^{\rm ser}+d_2T_t^{\rm chw},$$
+
+because current interactive workload is measured, deferrable execution and the chilled-water setpoint are deployed as selected, and server power follows the stated formula. Thus $e_{T,t+1}=0$ as well. This conclusion uses the user's exact model closure; it is not an assertion that a physical data center has no mismatch.
+
+If metered cooling power is also calculated by the identical stated cooling formula, the current power-balance correction residual is zero, because the optimizer enforces that same balance using current measured inputs. The correction then leaves the chosen supply pair unchanged. If a distinct metered-power value were supplied, its source and execution consequences would require a new explicitly specified model; none is added here.
+
+For each nominal signed margin $m_t^i=G_i\widehat s_{t+1|t}-g_i$, therefore,
+
+$$p_{t+1}^{i,\rm post}=\Pr(O_{t+1}^i=1\mid\mathcal G_t)=\mathbf1\{m_t^i>0\}.$$
+
+The strict inequality matters: equality at a nominal boundary is not a violation.
+
+### 2.1 Why this does not identify the paper's coarser probability with a binary number
+
+The paper denotes its history by $\mathcal F_t=\{\xi_1,\ldots,\xi_{t-1}\}$, naturally interpreted as the sigma-field generated by that information. It omits the current input $\xi_t$ that the controller subsequently observes. Under such a **premeasurement** filtration, the selected nominal margin can still be random through $\xi_t$ and the optimizer. The correct expression is
+
+$$p_{t+1}^{i,\rm pre}=\mathbb E\!\left[\mathbf1\{m^i(\text{past},\xi_t,h_t)>0\}\mid\mathcal F_t\right],$$
+
+not a substitution into an error-CDF formula that treats the unknown current nominal margin as already measurable. This probability can be strictly between zero and one without any extra plant noise. Its identification requires a conditional law of current inputs given the past, and a defined feasible optimizer/execution map. Unconditional data summaries and a forecast-error MAE do not supply that conditional law.
+
+Neither binary postdecision probabilities nor exact plant equations imply binary long-run empirical violation fractions. Repeated deterministic decisions based on changing measured inputs can generate any of many nontrivial event frequencies.
+
+## 3. Exact battery reachability obstruction using the paper's parameters
+
+From the stated bounds $0\le p^{\rm ch},p^{\rm dis}\le P$ and the exact update,
+
+$$E_t-\frac{P\Delta\tau}{\eta_{\mathrm{dis}}}\le E_{t+1}\le E_t+\eta_{\rm ch}P\Delta\tau.$$
+
+Allowing simultaneous charge/discharge does not invalidate these inequalities: the minimum takes zero charging and maximal discharge; the maximum does the reverse. Additional MPC constraints can only reduce this reachable interval.
+
+The table gives $P=5$ MW, $\Delta\tau=1/4$ h, $\eta_{\rm ch}=0.97$, $\eta_{\rm dis}=0.98$, and nominal energy limits $[5,20]$ MWh. Consequently the closed safe core
+
+$$\mathcal C_E=\left[5+\frac{5(1/4)}{0.98},\;20-0.97(5)(1/4)\right]
+=\left[\frac{615}{98},\;\frac{1503}{80}\right]
+\approx[6.275510204,18.7875]$$
+
+has the following property: from any $E_t\in\mathcal C_E$, every feasible first action keeps $E_{t+1}\in[5,20]$, irrespective of relaxation magnitude, prices, forecasts, terminal value, or optimizer tie-breaking.
+
+At the convenient interior test value $E_t=12.5$ MWh,
+
+$$E_{t+1}\in\left[\frac{550}{49},\frac{1097}{80}\right]
+\approx[11.224489796,13.7125].$$
+
+Both ESS violation events are therefore identically zero on this state. This is a statement about all feasible first actions, not merely a sample optimization result.
+
+### 3.1 Consequences for previous assumptions
+
+At a known core state, event one is not attainable for either ESS limit. Thus the ideal event-choice assumption and a nondegenerate attainable interval contained in $(0,1)$ fail on any domain containing such a state, even if randomized actions were allowed. This remains true under the coarser filtration whenever the current energy is known there: averaging over current exogenous inputs cannot create an event impossible under every feasible action.
+
+Similarly, a uniform high-relaxation condition $p_{t+1}\ge p_H>p_\dagger>0$ cannot hold on a certification domain that admits a core state with arbitrarily large relaxation and at least one feasible MPC instance. Once an instance at that state is feasible, increasing only its relaxation retains feasibility under the intended nested-constraint reading; all resulting first actions still satisfy the safe-core reachability bound.
+
+This refutes the unrestricted **one-step tail certificate**, not the actual algorithm's long-run behavior on a restricted reachable joint state/relaxation set. A more refined domain or a multistep plant-response argument would require separate proof.
+
+### 3.2 Stronger common-domain obstruction for both ESS limits
+
+The lower event can occur only when $E_t<5+D$, while the upper event can occur only when $E_t>20-C$. The numerical thresholds satisfy
+
+$$5+D=6.275510204\ldots<18.7875=20-C,$$
+
+equivalently $C+D<20-5$. Therefore at **every known real energy state**, at least one of the two event-one choices is impossible under all power-admissible actions. No nonempty common energy-state domain can grant both constraints one-step event-one controllability at every state.
+
+This is stronger than the elementary fact that a realized state cannot simultaneously lie below 5 and above 20. Because the whole one-step reachable support is narrower than the nominal band, for any premeasurement filtration containing the current energy one actually has
+
+$$p_{t+1}^{1,\rm pre}\,p_{t+1}^{2,\rm pre}=0.$$
+
+Averaging over uncertain current exogenous inputs cannot make both conditional risks positive at that same known-state epoch. If a joint certification domain permits both relaxation amplitudes to be arbitrarily large at the same such state, the two positive high-tail requirements are consequently incompatible there. A domain coupling energy and the two amplitudes might exclude these pairs and would need separate proof. This statement does not preclude positive long-run average violation rates for both constraints at different times.
+
+## 4. What the zero-error completion does to the previous two bridge routes
+
+For exact error $e=0$, its CDF is $F(z)=\mathbf1\{z\ge0\}$. The optimizer/CDF route becomes a deterministic nominal-margin certificate: small relaxation must select safe margins, and large relaxation must select strictly positive margins. The strict positive high-end margin certificate cannot hold on the ESS safe core just established.
+
+There is also a direct initialization issue. The algorithm permits $h_0^i\le0$, whereas any coordinate initialized at exactly zero stays zero under the multiplicative update. If the next-state constraint for that coordinate is correctly imposed, exact recursion then gives zero violations whenever the MPC remains feasible. This holds under either reading of the nominal-bound replacement. Strictly negative initialization is therefore required for nontrivial adaptation of that coordinate; the allowed condition $h_0^i\le0$ does not by itself provide it.
+
+For the reference endpoint probability selector with fixed $0<\ell<u<1$, binary postdecision probabilities imply
+
+$$|p_{t+1}^{\rm post}-q_{S_t}|\ge\delta_{\rm ref}:=\min(\ell,1-u)>0.$$
+
+The earlier Poisson branch sensitivity has a positive asymptotic lower bound when the reference mean error is $O(1/w)$. Therefore its specific absolute-mismatch sufficient condition $D_w\mathbb E|p-q|=O(1/w)$ cannot hold under this postdecision filtration with fixed interior reference probabilities. This does **not** prove actual window tracking cannot be $O(1/w)$: an oracle-like deterministic sequence can perform better even while differing from every nondegenerate endpoint reference probability.
+
+The previous continuous-reference CDF tube is likewise incompatible with a small error-CDF approximation in this completion. For every continuous CDF $F_0$, writing $c=F_0(0)$ gives
+
+$$\sup_z|\mathbf1\{z\ge0\}-F_0(z)|\ge\max(c,1-c)\ge1/2.$$
+
+The first discrepancy follows by approaching zero from below, the second by evaluating at zero. This rejects a small-$\delta_F$ continuous error reference; it does not reject a different reference based on the random nominal margin induced by a **premeasurement** exogenous-input law.
+
+## 5. Exact workload terminal-capacity counterexample
+
+Use the paper's explicit horizon window ending at $t_0+H$, with $t_0=10$, $H=4$, so the current execution slots are $10,11,12,13,14$. Take two groups:
+
+| Group | Release | Class deadline offset | Absolute deadline | Remaining demand |
+|---|---:|---:|---:|---:|
+| A | 10 | 5 | 15 | $a\Delta\tau$ |
+| B | 11 | 4 | 15 | $a\Delta\tau$ |
+
+Here $0<a\le\min(5,c^M)$, so each group respects the stated per-slot cap $M_k^D=5$. Class offset 3 need not be used. Set shared CPU availability, after interactive demand, to $a$ at slots 10 and 15 and zero at slots 11–14. Equivalently, set interactive CPU to $c^M-a$ at 10 and 15 and $c^M$ at 11–14. This respects the paper's aggregate CPU bound for any positive $c^M$.
+
+Choose forecasts consistent with these stipulated deterministic arrivals and CPU availabilities as they enter each prediction horizon; no forecast error is needed for the example. At epoch 10, both deadlines are outside the endpoint 14. Scheduling no deferrable work in the horizon leaves $a\Delta\tau$ for each group, and each passes the paper's individual terminal bound
+
+$$0\le\widehat C_{\tau,k}(14)\le M_k^D(15-14)\Delta\tau=5\Delta\tau.$$
+
+But after executing zero at slot 10, both groups require completion at slot 15, the only remaining slot with available CPU. Their total demand is $2a\Delta\tau$, whereas its aggregate capacity is only $a\Delta\tau$. Completion is impossible. At epoch 11 the horizon includes slot 15, so the contradiction already makes the updated workload scheduling constraints infeasible.
+
+The original workload instance was globally feasible: serve A at 10 and B at 15, each at rate $a$. Both releases, deadlines, per-group caps, and aggregate CPU capacity are respected. The numerical form $a=5$ gives the proposed demands $1.25$ each when $\Delta\tau=1/4$; that form explicitly presumes $c^M\ge5$. Because the manuscript does not numerically specify $c^M$, the scalable form above avoids assigning it an invented actual value.
+
+This proves that the individual terminal remainder bounds do not certify joint aggregate CPU viability. Adding these unexecuted groups to an otherwise feasible horizon baseline leaves its current electrical and thermal decisions unchanged; full-system feasibility additionally retains the baseline feasibility premise. The example does not prove the economic optimizer chooses the bad first action unless its objective and all coupled constraints are separately embedded and verified. No such optimizer claim is made here.
+
+## 6. A literal-constraint ambiguity affecting ESS relaxation
+
+The final row of `eq:total_problem` says the decision vector satisfies all of `eq:Ebs`. That collection includes the hard nominal bounds `eq:Ebs c`, $E_{\min}^{bs}\le E_t^{bs}\le E_{\max}^{bs}$. The displayed online program also adds relaxed bounds. Under a literal conjunction, the hard bounds dominate, making ESS relaxation redundant.
+
+Under that literal reading and exact first-step recursion, every constrained next-state ESS violation is zero. After a full zero window, its update factor is the fixed value $1+(\alpha-1/(2w))/\chi>1$ at the paper's parameters, so relaxation magnitude grows geometrically while nominal ESS limits remain enforced. This is a conditional consequence of the literal reading, not a claim that the author's intended controller necessarily used both sets of bounds.
+
+The prose instead says that these bounds are later enforced through adaptive chance constraints, indicating an intended replacement. That intended model must explicitly retain the energy transition and power bounds while replacing the nominal energy-bound subequation by the relaxed one. The safe-core obstruction in Section 3 survives this intended replacement, so it does not depend on exploiting the cross-reference ambiguity.
+
+The paper's aggregate CPU constraint `eq:cap` is likewise part of its stated workload/IT model and is the constraint used in Section 5. The online terminal argument must be assessed against that complete system capacity, not only each group's local cap.
+
+## 7. What remains to be established for a complete instance validation
+
+The confirmed exact-recursion closure fully resolves the additional first-step plant-error question for this audit. It does not identify the joint law of current exogenous inputs under the paper's coarser filtration; it does not supply unspecified numerical thermal/server coefficients, operating-domain bounds, or a proof that every receding-horizon optimizer preserves future joint feasibility.
+
+The manuscript therefore supports exact structural tests and exact failures of several previously proposed global assumptions. It does not yet support an unconditional full-model chance-calibration theorem. Any repaired certification must specify its filtration, its reachable joint domain, its intended replacement of nominal state bounds, and its treatment of collective future workload capacity. The distinction between assumptions disproved by the written model and instance-level data not supplied is retained throughout this audit.
+
+## 8. Independent audit of the companion model-specific proofs
+
+Both `state_margin_certificates.md` and `domain_feasibility.md` were read in full. Their substantive mathematical results pass independent audit, with the qualifications below retained.
+
+### 8.1 State-margin certificates
+
+All published numerical bounds were recomputed: the one-step increments are $C=97/80$ and $D=125/98$; the four-step safe initial-energy interval is $[10.102040816\ldots,15.15]$, and the five-step version is $[11.377551020\ldots,13.9375]$. The corresponding midpoint terminal bands and the earliest power-possible crossings, six transfers for the low bound and seven for the upper bound, are correct. These are full-feasible-set outer bounds, not assertions that their endpoints are optimal or jointly feasible with every other subsystem.
+
+The thermal support-function bounds correctly allow either sign of $d_1,d_2$ and remain valid despite coupling because they are outer bounds. The current per-job execution bounds follow from the paper's deadline and terminal equations for both in-horizon and out-of-horizon deadlines. Their sum gives a valid IT-power envelope; numerical evaluation still requires the coefficients and task records absent from the manuscript's parameter table.
+
+The economic exchange formulas $-\gamma_t\eta_{\rm dis}e+V(E_{\rm term}-e)-V(E_{\rm term})$ and $\gamma_t e/\eta_{\rm ch}+V(E_{\rm term}+e)-V(E_{\rm term})$ have the correct energy units, efficiency factors, signs, and online objective scaling. They explicitly require the proposed exchange to preserve all constraints and to use current grid power as the marginal supply adjustment. They do not follow solely from monotonicity of $V$.
+
+This also clarifies the manuscript's informal boundary price threshold near line 681. With energy in MWh, price in money/MWh, and $V$ in money, placing $\Delta\tau$ only on the price side of $\gamma_t\Delta\tau>-\Delta V/\Delta x$ does not compare like units. The marginal discharge criterion from the exact exchange is $\gamma_t\eta_{\rm dis}>-V'(E_{\rm term})$ when the relevant value-function segment and feasible exchange are fixed. This is a correction to the informal threshold expression, not evidence that the corresponding exchange is feasible or optimal at an actual recorded state.
+
+The author refined the high-tail obstruction to require the joint domain to admit the same core-energy information with arbitrarily large target relaxation. This avoids incorrectly rejecting a domain that contains a core state only at small relaxation. That refinement was checked and accepted.
+
+### 8.2 Workload viability and the conditional economic strengthening
+
+The companion's two-group counterexample agrees with Section 5, including the scalable $a$ and the alternative consistently indexed four-control-slot version. Its stronger exchange proof is valid **under its explicit additional assumptions**: positive current price and IT/cooling marginal coefficient, nonnegative thermal load coefficient, battery initially at an enforced hard lower bound, and nonnegative load after removing current deferrable execution. The battery lower-bound condition implies net charging is nonnegative; removing a positive current task execution then decreases required grid power without violating its lower bound. Keeping battery commands fixed preserves the entire battery trajectory and terminal value, while reduced server power does not increase future outlet temperatures. The individual terminal remainder still passes. Consequently cost strictly falls, and all optimum first actions defer the task under those stated conditions. These coefficient, price, and boundary conditions were not promoted to known facts about the user's numerical instance.
+
+### 8.3 Max-flow, supply feasibility, and correction mapping
+
+The task-subset criterion
+
+$$\sum_{j\in J}B_j\le\Delta\tau\sum_t\min\!\left(R_t,\sum_{j\in J:t\in W_j}M_j\right)$$
+
+is exactly the source-task-slot-sink minimum-cut condition, including the per-group rate caps. Its common-window constant-capacity specialization has the stated simple sufficiency proof by equal allocation across slots. These certify known future CPU scheduling, not feasibility under unspecified future arrivals.
+
+The physical-storage/current-supply criterion $L\le\omega+G+\min(P,\eta_{\rm dis}(E-E_L)/\Delta\tau)$ is necessary and sufficient for the explicitly limited one-slot subproblem. Simultaneous charge/discharge cannot increase maximum feasible net discharge: equal extra charging and discharging only incurs an additional energy loss. The constructive pure-discharge/no-discharge proof is valid.
+
+The supply correction identity $p_{\mathrm{new}}^r+p_{\mathrm{new}}^{gd}=\operatorname{clip}(D,0,\omega+G)$ is correct in both branches. Exact balance therefore holds exactly on the stated demand interval. The mapping maximizes renewable use if the nominal supply pair already has that property; arbitrary nominal pairs need not satisfy it. Under the user's exact current cooling formula, its residual is zero, so a separate mismatch was not inserted to manufacture an actual-model failure.
+
+### 8.4 Adaptive tightening and formulation qualifications
+
+The current-state boundary example has correct update numbers and a direct algebraic contradiction: an old relaxed boundary point can be excluded by the strictly tighter bound imposed together with the next problem's measured-state equality. It is a **conditional active-boundary/history obstruction**. A claim that a particular fully optimized trajectory reaches that antecedent needs its own objective/data embedding; the audit does not silently add one. The storage example applies to the intended relaxed-bound reading, while the retained-hard-bound reading would already exclude it.
+
+The separate observations about missing explicit first-step ramp anchoring, the shared CPU row, independent physical ESS bounds, and action/state horizon endpoints are correctly presented as written-model definitions requiring resolution. They are not allegations about the old implementation, which was not inspected.
+
+## 9. Bounded final audit of the integrated validation report
+
+The root report `当前论文模型的证书验证.md` was read in full after the source proofs were audited. **Final substantive verdict: passes.**
+
+Its status table correctly separates proved state bounds, falsified full-domain assumptions, conditional counterexamples, and missing numerical model data. The postdecision/pre-current-input filtration distinction is retained; the product-zero statement for the two premeasurement ESS risks is conditioned on knowing the current energy. The central-energy high-tail obstruction explicitly requires jointly allowed central states and arbitrarily large relaxation, and the text does not promote it to a claim that every actual closed-loop trajectory fails.
+
+The workload example uses the actual deadline classes, scalable CPU capacity, correct horizon endpoints, and exact forecasts. Its embedding in the full energy/thermal system explicitly retains a feasible-baseline premise. The conditional economic strengthening and current-state boundary-tightening example are not described as observed optimized trajectories. Thermal coefficient values remain unconfirmed, and exact storage/temperature propagation is not conflated with an independently unconfirmed metered-cooling-power law.
+
+All displayed energy fractions, four/five-step intervals, six/seven-step crossing lower bounds, and the zero-window ESS multiplier $2327/2304$ were checked. The physical-domain paragraph correctly distinguishes admitting an enlarged relaxed interval from proving the optimizer actually leaves the physical region.
+
+A small precision clarification was sent to the root author: the fixed-endpoint positive probability-mismatch floor rules out the previous **asymptotic $O(1/w)$ absolute-mismatch sufficient condition** when combined with the nonvanishing sensitivity coefficient; it does not by itself rule out every finite-window approximation bound. No substantive proof error remains unresolved. This closes the requested final integration audit without adding a new research direction.

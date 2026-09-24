@@ -1,0 +1,20 @@
+g 0.0
+   W0 {'A': (np.float64(0.085), np.float64(0.119)), 'B': (np.float64(0.08), np.float64(0.121)), 'rateA': np.float64(0.1), 'rateB': np.float64(0.0999), 'rA_std': np.float64(0.027)}
+   EV {'A': (np.float64(0.095), np.float64(0.105)), 'B': (np.float64(0.095), np.float64(0.105)), 'rateA': np.float64(0.1), 'rateB': np.float64(0.1), 'rA_std': np.float64(0.053)}
+   WB {'A': (np.float64(0.097), np.float64(0.103)), 'B': (np.float64(0.097), np.float64(0.102)), 'rateA': np.float64(0.1), 'rateB': np.float64(0.1), 'rA_std': np.float64(0.152)}
+   TB {'A': (np.float64(0.097), np.float64(0.104)), 'B': (np.float64(0.097), np.float64(0.103)), 'rateA': np.float64(0.1), 'rateB': np.float64(0.1), 'rA_std': np.float64(0.11)}
+g 1.0
+   W0 {'A': (np.float64(0.081), np.float64(0.119)), 'B': (np.float64(0.078), np.float64(0.124)), 'rateA': np.float64(0.1), 'rateB': np.float64(0.1001), 'rA_std': np.float64(0.032)}
+   EV {'A': (np.float64(0.095), np.float64(0.106)), 'B': (np.float64(0.095), np.float64(0.105)), 'rateA': np.float64(0.1), 'rateB': np.float64(0.1), 'rA_std': np.float64(0.053)}
+   WB {'A': (np.float64(0.094), np.float64(0.103)), 'B': (np.float64(0.096), np.float64(0.105)), 'rateA': np.float64(0.1), 'rateB': np.float64(0.1002), 'rA_std': np.float64(0.289)}
+   TB {'A': (np.float64(0.097), np.float64(0.104)), 'B': (np.float64(0.097), np.float64(0.103)), 'rateA': np.float64(0.1), 'rateB': np.float64(0.1), 'rA_std': np.float64(0.11)}
+g 3.0
+   W0 {'A': (np.float64(0.0), np.float64(0.341)), 'B': (np.float64(0.0), np.float64(0.419)), 'rateA': np.float64(0.0955), 'rateB': np.float64(0.0941), 'rA_std': np.float64(0.646)}
+   EV {'A': (np.float64(0.095), np.float64(0.106)), 'B': (np.float64(0.094), np.float64(0.107)), 'rateA': np.float64(0.1), 'rateB': np.float64(0.0999), 'rA_std': np.float64(0.054)}
+   WB {'A': (np.float64(0.047), np.float64(0.11)), 'B': (np.float64(0.058), np.float64(0.108)), 'rateA': np.float64(0.1006), 'rateB': np.float64(0.0997), 'rA_std': np.float64(1.856)}
+   TB {'A': (np.float64(0.097), np.float64(0.103)), 'B': (np.float64(0.097), np.float64(0.103)), 'rateA': np.float64(0.1), 'rateB': np.float64(0.1), 'rA_std': np.float64(0.111)}
+g 6.0
+   W0 {'A': (np.float64(0.0), np.float64(0.542)), 'B': (np.float64(0.0), np.float64(0.876)), 'rateA': np.float64(0.0929), 'rateB': np.float64(0.1359), 'rA_std': np.float64(1.187)}
+   EV {'A': (np.float64(0.094), np.float64(0.107)), 'B': (np.float64(0.095), np.float64(0.106)), 'rateA': np.float64(0.1001), 'rateB': np.float64(0.0999), 'rA_std': np.float64(0.057)}
+   WB {'A': (np.float64(0.0), np.float64(0.185)), 'B': (np.float64(0.0), np.float64(0.964)), 'rateA': np.float64(0.0915), 'rateB': np.float64(0.4828), 'rA_std': np.float64(3.943)}
+   TB {'A': (np.float64(0.097), np.float64(0.104)), 'B': (np.float64(0.097), np.float64(0.103)), 'rateA': np.float64(0.1), 'rateB': np.float64(0.1), 'rA_std': np.float64(0.114)}

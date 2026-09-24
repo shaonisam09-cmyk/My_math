@@ -1,0 +1,3 @@
+TB  forced-episode lockout 2016 slots (21.0 d) | quiet: first run 225, box max 0.188 | logistic Yw (0.097, 0.103) acw -0.004
+EF  forced-episode lockout 2716 slots (28.3 d) | quiet: first run 192, box max 0.175 | logistic Yw (0.097, 0.103) acw -0.004
+EFc forced-episode lockout 896 slots (9.3 d) | quiet: first run 192, box max 0.175 | logistic Yw (0.097, 0.103) acw -0.004
